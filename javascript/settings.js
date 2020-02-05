@@ -1345,105 +1345,105 @@ const CAMERASETTINGS = {
     "No Data"
   ],
   MULTIVISIONPROPRECISIONAC: [
-    "32",
-    "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
-    "On",
-    "Auto",
-    "1",
-    "3",
-    "1",
-    "23"
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
   ],
   ARTHRO1VISIONPROPRECISIONAC: [
-    "32",
+    "26",
     "Normal",
-    "-10",
-    "-3",
+    "0",
+    "-12",
     "0",
     "0",
     "On",
     "Auto",
-    "1",
+    "0",
     "3",
     "1",
-    "23"
+    "19"
   ],
   ARTHRO2VISIONPROPRECISIONAC: [
-    "32",
+    "26",
     "Normal",
-    "-10",
-    "-3",
+    "0",
+    "0",
     "0",
     "0",
     "On",
     "Auto",
+    "0",
+    "5",
     "1",
-    "3",
-    "1",
-    "23"
+    "17"
   ],
   ARTHRO4_16VISIONPROPRECISIONAC: [
-    "32",
-    "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
-    "On",
-    "Auto",
-    "1",
-    "3",
-    "1",
-    "23"
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
   ],
   LAP1VISIONPROPRECISIONAC: [
-    "32",
+    "26",
     "Normal",
     "-10",
-    "-3",
+    "-5",
     "0",
     "0",
     "On",
     "Auto",
-    "1",
+    "0",
     "3",
     "1",
-    "23"
+    "19"
   ],
   LAP2VISIONPROPRECISIONAC: [
-    "32",
+    "26",
     "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
     "On",
     "Auto",
+    "0",
+    "4",
     "1",
-    "3",
-    "1",
-    "23"
+    "19"
   ],
   LAPSTORZVISIONPROPRECISIONAC: [
-    "32",
-    "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
-    "On",
-    "Auto",
-    "1",
-    "3",
-    "1",
-    "23"
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
   ],
   CYSTOVISIONPROPRECISIONAC: [
-    "32",
+    "26",
     "Normal",
     "-10",
     "-3",
@@ -1451,94 +1451,94 @@ const CAMERASETTINGS = {
     "0",
     "On",
     "Auto",
-    "1",
+    "0",
     "3",
     "1",
-    "23"
+    "19"
   ],
   HYSTEROSCOPYVISIONPROPRECISIONAC: [
-    "32",
+    "26",
     "Normal",
-    "-10",
+    "-12",
     "-3",
     "0",
     "0",
     "On",
     "Auto",
-    "1",
-    "3",
-    "1",
-    "23"
+    "No Data",
+    "No Data",
+    "No Data",
+    "19"
   ],
   FLEXISCOPEVISIONPROPRECISIONAC: [
-    "32",
+    "No Data",
     "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
     "On",
     "Auto",
-    "1",
-    "3",
-    "1",
-    "23"
+    "No Data",
+    "No Data",
+    "No Data",
+    "19"
   ],
   ENTVISIONPROPRECISIONAC: [
     "32",
     "Normal",
     "-10",
-    "-3",
+    "-2",
     "0",
     "0",
     "On",
     "Auto",
-    "1",
+    "0",
     "3",
-    "1",
-    "23"
+    "2",
+    "19"
   ],
   LASERVISIONPROPRECISIONAC: [
-    "32",
+    "No Data",
     "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
     "On",
     "Auto",
-    "1",
-    "3",
-    "1",
-    "23"
+    "No Data",
+    "No Data",
+    "No Data",
+    "19"
   ],
   MICROSCOPEVISIONPROPRECISIONAC: [
-    "32",
+    "No Data",
     "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
     "On",
     "Auto",
-    "1",
-    "3",
-    "1",
-    "23"
+    "No Data",
+    "No Data",
+    "No Data",
+    "19"
   ],
   STANDARDVISIONPROPRECISIONAC: [
-    "32",
+    "No Data",
     "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
     "On",
     "Auto",
-    "1",
-    "3",
-    "1",
-    "23"
+    "No Data",
+    "No Data",
+    "No Data",
+    "19"
   ],
   VEINHARVESTVISIONPROPRECISIONAC: [
     "32",
@@ -3201,7 +3201,8 @@ const MONITORPARAMS = [
   "Blue",
   "Gamma",
   "Brightness",
-  "Contrast"
+  "Contrast",
+  "Sharpness"
 ];
 const FOURKPARAMS = [
   "Red",
@@ -3688,8 +3689,8 @@ function displaySettings(cameraDisplaySpecialty) {
 
   // Display Settings Div
   let displayHeaderDiv = document.createElement("div");
-  // let displaySettingsDiv1 = document.createElement("div");
-  // let displaySettingsDiv2 = document.createElement("div");
+  let displaySettingsDiv1 = document.createElement("div");
+  let displaySettingsDiv2 = document.createElement("div");
   displayHeaderDiv.setAttribute("class", "container-display");
 
   // Apply params settings to DOM
@@ -3787,7 +3788,7 @@ document.addEventListener("DOMContentLoaded", function() {
   navToggle();
 });
 
-// NavBar functionality
+// Navbar functionality
 function navToggle() {
   let mainNav = document.getElementById("js-menu");
   let navBarToggle = document.getElementById("js-navbar-toggle");
