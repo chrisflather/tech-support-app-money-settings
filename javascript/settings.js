@@ -3688,8 +3688,8 @@ function displaySettings(cameraDisplaySpecialty) {
 
   // Display Settings Div
   let displayHeaderDiv = document.createElement("div");
-  let displaySettingsDiv1 = document.createElement("div");
-  let displaySettingsDiv2 = document.createElement("div");
+  // let displaySettingsDiv1 = document.createElement("div");
+  // let displaySettingsDiv2 = document.createElement("div");
   displayHeaderDiv.setAttribute("class", "container-display");
 
   // Apply params settings to DOM
@@ -3787,6 +3787,7 @@ document.addEventListener("DOMContentLoaded", function() {
   navToggle();
 });
 
+// NavBar functionality
 function navToggle() {
   let mainNav = document.getElementById("js-menu");
   let navBarToggle = document.getElementById("js-navbar-toggle");
