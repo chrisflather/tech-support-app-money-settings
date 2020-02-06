@@ -3290,22 +3290,78 @@ const MONITORSETTINGS = {
     "No Data",
     "No Data"
   ],
-  VISIONPROMULTIPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
+  VISIONPROMULTIPRECISIONAC: ["-30", "-30", "5", "S2", "45", "60"],
   VISIONPROARTHRO1PRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROARTHRO2PRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROARTHRO4_16PRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROLAP1PRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROLAP2PRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROLAPSTORZPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROCYSTOSPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROHYSTEROSCOPYPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROFLEXISCOPEPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROENTPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROLASERPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROMICROSCOPEPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROSTANDARDPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROVEINHARVESTPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROOLYMPUSGIPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
+  VISIONPROARTHRO2PRECISIONAC: ["-10", "-10", "5", "S2", "45", "60"],
+  VISIONPROARTHRO4_16PRECISIONAC: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  VISIONPROLAP1PRECISIONAC: ["-35", "5", "5", "S2", "45", "60"],
+  VISIONPROLAP2PRECISIONAC: ["-6", "-9", "3", "1.9", "50", "58"],
+  VISIONPROLAPSTORZPRECISIONAC: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  VISIONPROCYSTOSPRECISIONAC: ["-35", "5", "5", "S2", "45", "60"],
+  VISIONPROHYSTEROSCOPYPRECISIONAC: ["-40", "10", "5", "S2", "45", "60"],
+  VISIONPROFLEXISCOPEPRECISIONAC: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  VISIONPROENTPRECISIONAC: ["-50", "30", "10", "1.5", "47", "58"],
+  VISIONPROLASERPRECISIONAC: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  VISIONPROMICROSCOPEPRECISIONAC: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  VISIONPROSTANDARDPRECISIONAC: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  VISIONPROVEINHARVESTPRECISIONAC: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  VISIONPROOLYMPUSGIPRECISIONAC: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
   HDTVWISEMULTIPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
   HDTVWISEARTHRO1PRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
   HDTVWISEARTHRO2PRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
