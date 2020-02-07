@@ -3137,35 +3137,77 @@ const CAMERASETTINGS = {
     "23"
   ],
   MULTIFOURK1588: [
-    "42",
+    "26",
+    "Normal",
+    "-12",
+    "0",
+    "0",
+    "0",
+    "On",
+    "Auto",
+    "1",
+    "3",
+    "1",
+    "17"
+  ],
+  ARTHRO1FOURK1588: [
+    "26",
+    "Normal",
+    "0",
+    "0",
+    "0",
+    "0",
+    "On",
+    "Auto",
+    "1",
+    "5",
+    "1",
+    "17"
+  ],
+  ARTHRO2FOURK1588: [
+    "26",
     "Normal",
     "-10",
     "-5",
     "0",
     "0",
-    "Auto",
+    "On",
     "Auto",
     "1",
-    "0",
+    "3",
     "1",
-    "26"
+    "19"
+  ],
+  ARTHRO4_16FOURK1588: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
   ],
   LAP1FOURK1588: [
-    "42",
+    "30",
     "Normal",
-    "-15",
-    "-8",
+    "-10",
+    "-5",
     "0",
     "0",
     "Auto",
     "Auto",
     "1",
-    "0",
-    "0",
-    "26"
+    "3",
+    "3",
+    "23"
   ],
   LAP2FOURK1588: [
-    "27",
+    "42",
     "Normal",
     "-10",
     "-5",
@@ -3178,19 +3220,146 @@ const CAMERASETTINGS = {
     "1",
     "26"
   ],
-  ENTFOURK1588: [
-    "4",
+  LAPSTORZFOURK1588: [
+    "26",
     "Normal",
-    "-20",
-    "-5",
+    "-10",
+    "-3",
+    "0",
+    "0",
+    "On",
+    "Auto",
+    "1",
+    "3",
+    "1",
+    "19"
+  ],
+  CYSTOFOURK1588: [
+    "26",
+    "Normal",
+    "-12",
+    "-3",
+    "0",
+    "0",
+    "On",
+    "Auto",
+    "1",
+    "3",
+    "1",
+    "19"
+  ],
+  HYSTEROSCOPYFOURK1588: [
+    "32",
+    "Normal",
+    "-10",
+    "-2",
+    "0",
+    "0",
+    "On",
+    "Auto",
+    "1",
+    "3",
+    "1",
+    "23"
+  ],
+  FLEXISCOPEFOURK1588: [
+    "27",
+    "Normal",
+    "7",
+    "-4",
     "3",
     "-2",
     "On",
     "Auto",
+    "1",
+    "6",
+    "1",
+    "10"
+  ],
+
+  ENTFOURK1588: [
+    "35",
+    "Normal",
+    "-10",
     "0",
+    "0",
+    "0",
+    "On",
+    "Auto",
     "1",
+    "3",
     "1",
-    "19"
+    "26"
+  ],
+  LASERFOURK1588: [
+    "35",
+    "Normal",
+    "-10",
+    "0",
+    "0",
+    "0",
+    "On",
+    "Auto",
+    "1",
+    "3",
+    "1",
+    "26"
+  ],
+  MICROSCOPEFOURK1588: [
+    "35",
+    "Normal",
+    "-10",
+    "0",
+    "0",
+    "0",
+    "On",
+    "Auto",
+    "1",
+    "3",
+    "1",
+    "26"
+  ],
+  STANDARDFOURK1588: [
+    "32",
+    "Normal",
+    "-10",
+    "-3",
+    "0",
+    "0",
+    "On",
+    "Auto",
+    "1",
+    "3",
+    "1",
+    "23"
+  ],
+  VEINHARVESTFOURK1588: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  OLYMPUSGIFOURK1588: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
   ]
 };
 
@@ -3546,19 +3715,122 @@ const FOURKSETTINGS = {
   FOURKENT21688: ["-50", "-13", "-15", "S0", "Low", "39", "52", "No Data"],
   FOURKENT31688: ["-10", "-6", "7", "S2", "Off", "39", "52", "No Data"],
   FOURKMULTI1688: ["-25", "-15", "5", "S2", "Low", "39", "52", "No Data"],
+  // 1588/4K
   FOURKMULTI1588: ["-25", "-15", "5", "S2", "Low", "39", "52", "5"],
+  FOURKARTHRO11588: ["-25", "-15", "5", "S2", "Low", "43", "65", "5"],
+  FOURKARTHRO21588: ["-25", "-15", "5", "S2", "Low", "43", "65", "5"],
+  FOURKARTHRO4_161588: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
   FOURKLAP11588: ["-30", "-5", "30", "1.5", "Off", "45", "60", "5"],
   FOURKLAP21588: ["-10", "25", "22", "1.5", "Off", "42", "53", "1"],
+  FOURKLAPSTORZ1588: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  FOURKCYSTO1588: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  FOURKHYSTEROSCOPY1588: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  FOURKFLEXISCOPE1588: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
   FOURKENT1588: ["-20", "0", "0", "1.9", "Off", "50", "55", "1"],
-  FOURKFLEXISCOPE1688: ["-35", "0", "10", "S0", "Mid", "45"],
-  FOURKCYSTO1688: ["-35", "0", "10", "S0", "Mid", "45", "70"],
-  FOURKARTHRO11688: ["-10", "10", "5", "S4", "Low", "37", "54"],
-  FOURKARTHRO21688: ["-15", "-5", "8", "S7", "Low", "37", "52"],
-  FOURKLASER1688: ["-35", "0", "10", "S0", "Mid", "45", "70"],
-  FOURKHYSTO1688: ["-45", "-15", "0", "S5", "Low", "40", "50"],
-  FOURKMICROSCOPE1688: ["TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD"],
-  FOURKOLYMPUSGI1688: ["TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD"],
-  FOURKVIENHARVEST1688: ["TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD"]
+  FOURKLASER1588: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  FOURKMICROSCOPE1588: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  FOURKSTANDARD1588: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  FOURKVEINHARVEST1588: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  FOURKOLYMPUSGI1588: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  FOURKFLEXISCOPE1688: ["-35", "0", "10", "S0", "Mid", "45", "No Data"],
+  FOURKCYSTO1688: ["-35", "0", "10", "S0", "Mid", "45", "70", "No Data"],
+  FOURKARTHRO11688: ["-10", "10", "5", "S4", "Low", "37", "54", "No Data"],
+  FOURKARTHRO21688: ["-15", "-5", "8", "S7", "Low", "37", "52", "No Data"],
+  FOURKLASER1688: ["-35", "0", "10", "S0", "Mid", "45", "70", "No Data"],
+  FOURKHYSTO1688: ["-45", "-15", "0", "S5", "Low", "40", "50", "No Data"],
+  FOURKMICROSCOPE1688: ["TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD"],
+  FOURKOLYMPUSGI1688: ["TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD"],
+  FOURKVIENHARVEST1688: ["TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD"]
 };
 
 function selectCamera() {
@@ -3597,6 +3869,48 @@ function showDisplays(camera) {
     displayTopDiv.appendChild(hDiv);
     vpDisplayDiv.appendChild(vpLink);
     displayTopDiv.appendChild(vpDisplayDiv);
+    // 4K
+    let fourKDisplayDiv = document.createElement("div");
+    let fourKLink = document.createElement("a");
+    fourKDisplayDiv.setAttribute("class", "display-button-div");
+    fourKDisplayDiv.setAttribute("align", "center");
+    fourKLink.setAttribute("class", "example_a");
+    fourKLink.setAttribute("data-display", "FourK");
+    fourKLink.setAttribute("href", "#");
+    fourKLink.setAttribute("rel", "nofollow noopener");
+    fourKLink.appendChild(document.createTextNode("4K"));
+    fourKDisplayDiv.appendChild(fourKLink);
+    displayTopDiv.appendChild(fourKDisplayDiv);
+    selectDisplay(camera);
+  } else if (camera === "1588") {
+    // HDTV Wise
+    let wiseDisplayDiv = document.createElement("div");
+    let wiseLink = document.createElement("a");
+    wiseDisplayDiv.setAttribute("class", "display-button-div");
+    wiseDisplayDiv.setAttribute("align", "center");
+    wiseLink.setAttribute("class", "example_a");
+    wiseLink.setAttribute("data-display", "HDTV Wise");
+    wiseLink.setAttribute("href", "#");
+    wiseLink.setAttribute("rel", "nofollow noopener");
+    wiseLink.appendChild(document.createTextNode("HDTV Wise"));
+    hDiv.appendChild(hElement);
+    displayTopDiv.appendChild(hDiv);
+    wiseDisplayDiv.appendChild(wiseLink);
+    displayTopDiv.appendChild(wiseDisplayDiv);
+
+    // Visionpro
+    let vpDisplayDiv = document.createElement("div");
+    let vpLink = document.createElement("a");
+    vpDisplayDiv.setAttribute("class", "display-button-div");
+    vpDisplayDiv.setAttribute("align", "center");
+    vpLink.setAttribute("class", "example_a");
+    vpLink.setAttribute("data-display", "VisionPro");
+    vpLink.setAttribute("href", "#");
+    vpLink.setAttribute("rel", "nofollow noopener");
+    vpLink.appendChild(document.createTextNode("Visionpro"));
+    vpDisplayDiv.appendChild(vpLink);
+    displayTopDiv.appendChild(vpDisplayDiv);
+
     // 4K
     let fourKDisplayDiv = document.createElement("div");
     let fourKLink = document.createElement("a");
