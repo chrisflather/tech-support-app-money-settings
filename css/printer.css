@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.printer-wrapper {
+  background: rgba(162, 164, 164, 0.9);
+  padding-top: 2.5em;
+  min-height: 100vh;
+}
+
+.title-div {
+  margin: 0 auto;
+  text-align: center;
+  color: #262626;
+  opacity: 0.8;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.sdc-buttons-div {
+  margin: 1em;
+}
+
+.example_a {
+  width: 160px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #f2c64e;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  opacity: 0.9;
+  transition: all 0.4s ease 0s;
+}
+
+.example_a:hover {
+  background: #434343;
+  letter-spacing: 0.7px;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
+}
