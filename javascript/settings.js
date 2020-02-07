@@ -3362,22 +3362,85 @@ const MONITORSETTINGS = {
     "No Data",
     "No Data"
   ],
-  HDTVWISEMULTIPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  HDTVWISEARTHRO1PRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  HDTVWISEARTHRO2PRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  HDTVWISEARTHRO4_16PRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  HDTVWISELAP1PRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  HDTVWISELAP2PRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  HDTVWISELAPSTORZPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  HDTVWISECYSTOPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  HDTVWISEHYSTEROSCOPYPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  HDTVWISEFLEXISCOPEPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  HDTVWISEENTPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  HDTVWISELASERPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  HDTVWISEMICROSCOPEPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  HDTVWISESTANDARDPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  HDTVWISEVEINHARVESTPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
-  HDTVWISEOLYMPUSGIPRECISIONAC: ["-20", "-20", "10", "S2", "45", "60"],
+  HDTVWISEMULTIPRECISIONAC: ["-30", "-15", "10", "S2", "45", "58"],
+  HDTVWISEARTHRO1PRECISIONAC: ["-25", "-25", "2", "S2", "50", "50"],
+  HDTVWISEARTHRO2PRECISIONAC: ["-27", "-2", "14", "S1", "50", "55"],
+  HDTVWISEARTHRO4_16PRECISIONAC: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  HDTVWISELAP1PRECISIONAC: ["-35", "-3", "25", "S2", "45", "58"],
+  HDTVWISELAP2PRECISIONAC: ["8", "0", "2", "S0", "50", "55"],
+  HDTVWISELAPSTORZPRECISIONAC: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  HDTVWISECYSTOPRECISIONAC: ["-35", "-3", "25", "S2", "45", "58"],
+  HDTVWISEHYSTEROSCOPYPRECISIONAC: ["8", "-25", "2", "S0", "45", "55"],
+  HDTVWISEFLEXISCOPEPRECISIONAC: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  HDTVWISEENTPRECISIONAC: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  HDTVWISELASERPRECISIONAC: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  HDTVWISEMICROSCOPEPRECISIONAC: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  HDTVWISESTANDARDPRECISIONAC: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  HDTVWISEVEINHARVESTPRECISIONAC: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  HDTVWISEOLYMPUSGIPRECISIONAC: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
   HDTVWISEMULTI1488: ["-20", "-20", "10", "S2", "45", "60"],
   HDTVWISEARTHRO11488: ["-20", "-20", "10", "S2", "45", "60"],
   HDTVWISEARTHRO21488: ["-20", "-20", "10", "S2", "45", "60"],
