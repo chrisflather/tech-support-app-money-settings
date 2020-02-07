@@ -3889,8 +3889,7 @@ const FOURKSETTINGS = {
 
 function selectCamera() {
   let cameraButton = document.getElementsByClassName("example_a");
-  let cameraDiv = document.getElementById("top-camera-div");
-
+  // let cameraDiv = document.getElementById("top-camera-div");
   for (let item of cameraButton) {
     item.addEventListener("click", function(item) {
       let cameraTopDiv = document.getElementById("top-camera-div");
@@ -4091,7 +4090,6 @@ function selectSpecialty(cameraDisplay) {
 }
 
 function displaySettings(cameraDisplaySpecialty) {
-  console.log(cameraDisplaySpecialty);
   let headerDiv = document.createElement("div");
   headerDiv.setAttribute("class", "settings-header");
   // Camera Parameter Header Div
@@ -4131,7 +4129,6 @@ function displaySettings(cameraDisplaySpecialty) {
     cameraDisplaySpecialty.display.replace(/\s/g, "").toUpperCase() +
     cameraDisplaySpecialty.camera.replace(/\s/g, "").toUpperCase();
   ccuSettingsUpCase = ccuSettings.toUpperCase();
-  console.log(ccuSettingsUpCase);
   if (cameraDisplaySpecialty.camera !== "1688") {
     // CCU Parameters
     CCUPARAMETERS.forEach(function(parameter) {
@@ -4176,8 +4173,8 @@ function displaySettings(cameraDisplaySpecialty) {
 
   // Display Settings Div
   let displayHeaderDiv = document.createElement("div");
-  let displaySettingsDiv1 = document.createElement("div");
-  let displaySettingsDiv2 = document.createElement("div");
+  // let displaySettingsDiv1 = document.createElement("div");
+  // let displaySettingsDiv2 = document.createElement("div");
   displayHeaderDiv.setAttribute("class", "container-display");
 
   // Apply params settings to DOM
