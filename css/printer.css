@@ -14,13 +14,25 @@ body {
   min-height: 100vh;
 }
 
+.top-sdc-div {
+  margin-top: 2.5em;
+}
+
+.printer-div {
+  display: none;
+}
+
 .title-div {
+  margin-bottom: 1em;
+  padding-top: 3.6em;
   margin: 0 auto;
   text-align: center;
   color: #262626;
   opacity: 0.8;
-  padding: 1em;
-  margin-bottom: 1em;
+}
+
+.first-botton-div {
+  margin-top: 2.2em;
 }
 
 .sdc-buttons-div {
