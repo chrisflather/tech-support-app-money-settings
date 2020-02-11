@@ -1793,60 +1793,61 @@ const CAMERASETTINGS = {
     "No Data"
   ],
   MULTIVISIONPRO1488: [
-    "32",
-    "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
-    "On",
-    "Auto",
-    "1",
-    "3",
-    "1",
-    "23"
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
   ],
+
   ARTHRO1VISIONPRO1488: [
     "32",
     "Normal",
-    "-10",
-    "-3",
+    "-15",
+    "-1",
     "0",
     "0",
     "On",
     "Auto",
+    "0",
+    "5",
     "1",
-    "3",
-    "1",
-    "23"
+    "19"
   ],
   ARTHRO2VISIONPRO1488: [
     "32",
     "Normal",
-    "-10",
-    "-3",
+    "-15",
+    "-1",
     "0",
     "0",
     "On",
     "Auto",
+    "0",
+    "5",
     "1",
-    "3",
-    "1",
-    "23"
+    "19"
   ],
   ARTHRO4_16VISIONPRO1488: [
-    "32",
-    "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
-    "On",
-    "Auto",
-    "1",
-    "3",
-    "1",
-    "23"
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
   ],
   LAP1VISIONPRO1488: [
     "32",
@@ -4194,11 +4195,15 @@ function displaySettings(cameraDisplaySpecialty) {
   let settingsHeaderDiv = document.createElement("div");
   let paramsTitle = document.createElement("h3");
   let settingsTitle = document.createElement("h3");
-
   // Give h3 tags Text
-  paramsTitle.appendChild(
-    document.createTextNode(`${cameraDisplaySpecialty.display}`)
-  );
+  if (cameraDisplaySpecialty.display !== "FourK") {
+    paramsTitle.appendChild(
+      document.createTextNode(`${cameraDisplaySpecialty.display}`)
+    );
+  } else {
+    paramsTitle.appendChild(document.createTextNode("4K"));
+  }
+
   settingsTitle.appendChild(
     document.createTextNode(`${cameraDisplaySpecialty.specialty} Settings`)
   );
