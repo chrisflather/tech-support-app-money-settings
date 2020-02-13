@@ -80,6 +80,10 @@ body {
   display: none;
 }
 
+.title-div {
+  color: #ffb600;
+}
+
 .displaySelectDiv {
   display: none;
 }
