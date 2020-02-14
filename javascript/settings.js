@@ -1,12 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const fixed = document.getElementById("home-section");
-  fixed.addEventListener(
-    "touchmove",
-    event => {
-      event.preventDefault;
-    },
-    false
-  );
   selectCamera();
 });
 // Constants
