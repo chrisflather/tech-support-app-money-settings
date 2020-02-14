@@ -8,7 +8,7 @@ body {
   font-family: "Josefin Sans", sans-serif;
 }
 
-.home-section {
+#home-section {
   background: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0.15) 0%,
