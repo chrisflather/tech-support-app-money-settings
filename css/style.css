@@ -137,7 +137,6 @@ body {
   padding: 1em;
   text-align: left;
   color: #262626;
-  opacity: 1;
 }
 
 .settings-header {
@@ -218,4 +217,26 @@ body {
 .camera-settings {
   flex: 1;
   color: #fff;
+}
+
+@media (max-width: 451px) {
+  .parent-div {
+    font-size: 0.9em;
+    width: 90%;
+  }
+  .settings-header {
+    width: 90%;
+  }
+
+  .monitor-main-div {
+    font-size: 0.9em;
+    width: 90%;
+  }
+
+  /* .monitor-settings {
+    font-size: 0.9em;
+  }
+  .monitor-params {
+    font-size: 0.9em;
+  } */
 }
