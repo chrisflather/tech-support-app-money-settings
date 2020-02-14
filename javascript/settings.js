@@ -55,7 +55,17 @@ const CCUPARAMETERS = [
   "Target Area",
   "Brt Lvl"
 ];
-
+// 1288 Parameter
+const TWELVESHUTTERPARAMETERS = [
+  "Shutter",
+  "Shutter Adjust",
+  "Brightness Peak",
+  "Size",
+  "Target Area",
+  "Brt Control",
+  "Brt Lvl"
+];
+// 1688 Parameters
 const SIXTEENPARAMETERS = [
   "Shutter Mode",
   "Shutter Level",
@@ -3412,35 +3422,12 @@ const MONITORSETTINGS = {
     "No Data",
     "No Data"
   ],
-  // VISIONELECTMULTI1588: ["-25", "-25", "2", "S2", "45", "58", "No Data"],
-  // VISIONELECTARTHRO11588: ["-27", "-2", "14", "S1", "50", "55", "No Data"],
-  // VISIONELECTARTHRO21588: ["-35", "-3", "25", "S2", "55", "55", "No Data"],
-  // VISIONELECTARTHRO4_161588: [
-  //   "No Data",
-  //   "No Data",
-  //   "No Data",
-  //   "No Data",
-  //   "No Data",
-  //   "No Data"
-  // ],
   VISIONPROLAP11688: ["-35", "8", "7", "1.5", "45", "50", "5"],
   VISIONPROLAP21688: ["-15", "5", "5", "1.9", "45", "50", "5"],
   VISIONPROLAPSTORZ1688: ["-15", "5", "5", "1.9", "45", "50", "5"],
   VISIONPROENT11688: ["TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD"],
   VISIONPROENT21688: ["TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD"],
   VISIONPROENT31688: ["TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD"],
-  // VISIONELECTLAP11588: ["-25", "5", "5", "2.2", "55", "55", "No Data"],
-  // VISIONELECTLAP21588: ["-35", "-3", "25", "1.7", "55", "55", "No Data"],
-  // VISIONELECTLAPSTORZ1588: ["-35", "-3", "25", "S2", "45", "58", "No Data"],
-  // VISIONELECTCYSTO1588: ["8", "-25", "2", "S0", "45", "55", "No Data"],
-  // VISIONELECTHYSTEROSCOPY1588: ["-25", "-25", "2", "S2", "45", "50", "No Data"],
-  // VISIONELECTFLEXISCOPE1588: ["-50", "-30", "5", "S0", "47", "58", "No Data"],
-  // VISIONELECTENT1588: ["-35", "-3", "25", "S1", "45", "55", "No Data"],
-  // VISIONELECTLASER1588: ["-30", "-3", "25", "S1", "45", "55", "No Data"],
-  // VISIONELECTMICROSCOPE1588: ["-30", "-15", "10", "S2", "45", "58", "No Data"],
-  // VISIONELECTSTANDARD1588: ["-50", "30", "10", "1.5", "47", "58", "No Data"],
-  // VISIONELECTVEINHARVEST1588: ["-36", "38", "0", "S2", "50", "46", "No Data"],
-
   HDTVWISEMULTI1588: ["-25", "-25", "2", "S2", "45", "58", "No Data"],
   HDTVWISEARTHRO11588: ["-27", "-2", "14", "S1", "50", "55", "No Data"],
   HDTVWISEARTHRO21588: ["-35", "-3", "25", "S2", "55", "55", "No Data"],
@@ -4163,9 +4150,32 @@ function displaySettings(cameraDisplaySpecialty) {
     cameraDisplaySpecialty.display.replace(/\s/g, "").toUpperCase() +
     cameraDisplaySpecialty.camera.replace(/\s/g, "").toUpperCase();
   ccuSettingsUpCase = ccuSettings.toUpperCase();
-  if (cameraDisplaySpecialty.camera !== "1688") {
+  if (
+    cameraDisplaySpecialty.camera !== "1688" &&
+    cameraDisplaySpecialty.camera !== "1288"
+  ) {
     // CCU Parameters
     CCUPARAMETERS.forEach(function(parameter) {
+      console.log(parameter);
+      let cameraParameter = document.createElement("p");
+      cameraParameter.appendChild(document.createTextNode(parameter));
+      cameraParameterDiv.appendChild(cameraParameter);
+      parentDiv.appendChild(cameraParameterDiv);
+    });
+
+    for (let setting in CAMERASETTINGS) {
+      if (ccuSettingsUpCase === setting) {
+        CAMERASETTINGS[setting].forEach(function(setting) {
+          let cameraSettings = document.createElement("p");
+          cameraSettings.appendChild(document.createTextNode(setting));
+          cameraSettingsDiv.appendChild(cameraSettings);
+          parentDiv.appendChild(cameraSettingsDiv);
+        });
+      }
+    }
+  } else if (cameraDisplaySpecialty.camera === "1288") {
+    // 1288 Parameters
+    TWELVESHUTTERPARAMETERS.forEach(function(parameter) {
       let cameraParameter = document.createElement("p");
       cameraParameter.appendChild(document.createTextNode(parameter));
       cameraParameterDiv.appendChild(cameraParameter);
