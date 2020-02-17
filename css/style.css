@@ -219,6 +219,9 @@ body {
 }
 
 @media (max-width: 451px) {
+  #home-section {
+    background-attachment: fixed;
+  }
   .parent-div {
     font-size: 0.9em;
     width: 90%;
