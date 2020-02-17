@@ -2489,20 +2489,7 @@ const CAMERASETTINGS = {
     "1",
     "23"
   ],
-  ARTHRO1VISIONPRO1288: [
-    "32",
-    "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
-    "On",
-    "Auto",
-    "1",
-    "3",
-    "1",
-    "23"
-  ],
+  ARTHRO1VISIONPRO1288: ["On", "88", "4", "0", "0", "Auto", "12"],
   ARTHRO2VISIONPRO1288: [
     "32",
     "Normal",
@@ -4156,7 +4143,6 @@ function displaySettings(cameraDisplaySpecialty) {
   ) {
     // CCU Parameters
     CCUPARAMETERS.forEach(function(parameter) {
-      console.log(parameter);
       let cameraParameter = document.createElement("p");
       cameraParameter.appendChild(document.createTextNode(parameter));
       cameraParameterDiv.appendChild(cameraParameter);
