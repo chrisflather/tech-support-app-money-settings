@@ -37,6 +37,20 @@ const SIXTEENSPECIALTIES = [
   "Olympus GI",
   "Vien Harvest"
 ];
+TWELVESPECIALTIES = [
+  "Arthro 1",
+  "Arthro 2",
+  "Lap 1",
+  "Lap 2",
+  "Cysto",
+  "Hysto",
+  "Flexiscope",
+  "ENT 1",
+  "ENT 2",
+  "Laser",
+  "Microscope",
+  "Standard"
+];
 
 let ccuSettings;
 let ccuSettingsUpCase;
@@ -2316,20 +2330,6 @@ const CAMERASETTINGS = {
     "0",
     "On"
   ],
-  ARTHRO4_16HDTVWISE1288: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
-  ],
   LAP1HDTVWISE1288: [
     "4 bars",
     "5 bars",
@@ -2357,20 +2357,6 @@ const CAMERASETTINGS = {
     "12",
     "-20",
     "On"
-  ],
-  LAPSTORZHDTVWISE1288: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
   ],
   CYSTOHDTVWISE1288: [
     "3 bars",
@@ -2414,7 +2400,21 @@ const CAMERASETTINGS = {
     "-10",
     "On"
   ],
-  ENTHDTVWISE1288: [
+  ENT1HDTVWISE1288: [
+    "3 bars",
+    "5 bars",
+    "0 bars",
+    "On",
+    "88",
+    "3",
+    "0",
+    "0",
+    "Auto",
+    "12",
+    "-30",
+    "On"
+  ],
+  ENT2HDTVWISE1288: [
     "3 bars",
     "5 bars",
     "0 bars",
@@ -2470,48 +2470,6 @@ const CAMERASETTINGS = {
     "-10",
     "On"
   ],
-  VEINHARVESTHDTVWISE1288: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
-  ],
-  OLYMPUSGIHDTVWISE1288: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
-  ],
-  MULTIVISIONPRO1288: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
-  ],
   ARTHRO1VISIONPRO1288: [
     "4 bars",
     "5 bars",
@@ -2540,20 +2498,6 @@ const CAMERASETTINGS = {
     "0",
     "On"
   ],
-  ARTHRO4_16VISIONPRO1288: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
-  ],
   LAP1VISIONPRO1288: [
     "4 bars",
     "5 bars",
@@ -2581,20 +2525,6 @@ const CAMERASETTINGS = {
     "12",
     "-20",
     "On"
-  ],
-  LAPSTORZVISIONPRO1288: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
   ],
   CYSTOVISIONPRO1288: [
     "3 bars",
@@ -2638,7 +2568,21 @@ const CAMERASETTINGS = {
     "-10",
     "On"
   ],
-  ENTVISIONPRO1288: [
+  ENT1VISIONPRO1288: [
+    "3 bars",
+    "5 bars",
+    "0 bars",
+    "On",
+    "88",
+    "3",
+    "0",
+    "0",
+    "Auto",
+    "12",
+    "-30",
+    "On"
+  ],
+  ENT2VISIONPRO1288: [
     "3 bars",
     "5 bars",
     "0 bars",
@@ -2693,34 +2637,6 @@ const CAMERASETTINGS = {
     "12",
     "-10",
     "On"
-  ],
-  VEINHARVESTVISIONPRO1288: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
-  ],
-  OLYMPUSGIVISIONPRO1288: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
   ],
   MULTIVISIONPRO1188: [
     "32",
@@ -3739,118 +3655,30 @@ const MONITORSETTINGS = {
   VISIONPROSTANDARD1488: ["-7", "5", "-10", "S0", "45", "55", "No Data"],
   VISIONPROVEINHARVEST1488: ["-50", "30", "10", "1.5", "47", "58", "No Data"],
   VISIONPROOLYMPUSGI1488: ["70", "46", "28", "S0", "37", "41"],
-  VISIONPROMULTI1288: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
-  ],
   VISIONPROARTHRO11288: ["-20", "-10", "5", "S2", "45", "60", "No Data"],
   VISIONPROARTHRO21288: ["-20", "-10", "-10", "S2", "45", "60", "No Data"],
-  VISIONPROARTHRO4_161288: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
-  ],
   VISIONPROLAP11288: ["-35", "10", "5", "S2", "45", "60", "No Data"],
   VISIONPROLAP21288: ["-25", "-25", "10", "S2", "45", "60", "No Data"],
-  VISIONPROLAPSTORZ1288: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
-  ],
   VISIONPROCYSTO1288: ["-35", "10", "5", "S2", "45", "60", "No Data"],
   VISIONPROHYSTEROSCOPY1288: ["-45", "10", "5", "S2", "45", "60", "No Data"],
   VISIONPROFLEXISCOPE1288: ["-25", "-25", "2", "S2", "45", "50", "No Data"],
-  VISIONPROENT1288: ["-50", "0", "10", "1.5", "47", "57", "No Data"],
+  VISIONPROENT11288: ["-50", "0", "10", "1.5", "47", "57", "No Data"],
+  VISIONPROENT21288: ["0", "0", "0", "1.5", "50", "50", "No Data"],
   VISIONPROLASER1288: ["-35", "10", "5", "S2", "45", "60", "No Data"],
   VISIONPROMICROSCOPE1288: ["-35", "10", "5", "S3", "45", "60", "No Data"],
   VISIONPROSTANDARD1288: ["-10", "5", "10", "S0", "45", "55", "No Data"],
-  VISIONPROVEINHARVEST1288: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
-  ],
-  VISIONPROOLYMPUSGI1288: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
-  ],
-  HDTVWISEMULTI1288: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
-  ],
   HDTVWISEARTHRO11288: ["-14", "-30", "14", "S2", "45", "52", "No Data"],
   HDTVWISEARTHRO21288: ["-27", "-2", "14", "S2", "50", "50", "No Data"],
-  HDTVWISEARTHRO4_161288: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
-  ],
   HDTVWISELAP11288: ["-25", "-25", "2", "S2", "45", "52", "No Data"],
   HDTVWISELAP21288: ["8", "-5", "2", "S0", "45", "52", "No Data"],
-  HDTVWISELAPSTORZ1288: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
-  ],
   HDTVWISECYSTO1288: ["8", "-10", "2", "S0", "50", "50", "No Data"],
   HDTVWISEHYSTEROSCOPY1288: ["8", "-25", "2", "S0", "50", "50", "No Data"],
   HDTVWISEFLEXISCOPE1288: ["-25", "-25", "2", "S2", "45", "55", "No Data"],
-  HDTVWISEENT1288: ["-50", "0", "10", "1.5", "47", "57", "No Data"],
+  HDTVWISEENT11288: ["-50", "0", "10", "1.5", "47", "57", "No Data"],
+  HDTVWISEENT21288: ["-30", "-22", "3", "1.9", "48", "60", "No Data"],
   HDTVWISELASER1288: ["15", "-30", "2", "S2", "45", "50", "No Data"],
   HDTVWISEMICROSCOPE1288: ["8", "-10", "2", "1.9", "55", "50", "No Data"],
   HDTVWISESTANDARD1288: ["-35", "-3", "25", "S1", "45", "58", "No Data"],
-  HDTVWISEVEINHARVEST1288: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
-  ],
-  HDTVWISEOLYMPUSGI1288: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
-  ],
   HDTVWISEMULTI1188: ["-20", "-20", "10", "S2", "45", "60"],
   HDTVWISEARTHRO11188: ["-20", "-20", "10", "S2", "45", "60"],
   HDTVWISEARTHRO21188: ["-20", "-20", "10", "S2", "45", "60"],
@@ -4168,9 +3996,12 @@ CameraDisplayObject.prototype.displaySpecialties = function() {
   hDiv.appendChild(hElement);
   specialtyTopDiv.appendChild(hDiv);
   // specialty div
-
-  if (this.camera !== "1688") {
+  if (this.camera !== "1688" && this.camera !== "1288") {
     SPECIALTIES.forEach(function(specialty) {
+      specialtyDiv(specialty);
+    });
+  } else if (this.camera === "1288") {
+    TWELVESPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
   } else {
