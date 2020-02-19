@@ -56,14 +56,37 @@ const CCUPARAMETERS = [
   "Brt Lvl"
 ];
 // 1288 Parameter
-const TWELVESHUTTERPARAMETERS = [
+const TWELVEPARAMETERS = [
+  "Enhance",
+  "Light",
+  "Zoom",
   "Shutter",
   "Shutter Adjust",
   "Brightness Peak",
   "Size",
   "Target Area",
   "Brt Control",
-  "Brt Lvl"
+  "Brt Lvl",
+  "R-Gain",
+  "Sound"
+];
+// 1188 Parameters
+const ELEVENPARAMETERS = [
+  "Enhance",
+  "Light",
+  "Zoom",
+  "Level",
+  "Peak",
+  "Area",
+  "AGC-Level",
+  "AGC",
+  "Shutter",
+  "Options",
+  "Fiber",
+  "NTSC/PAL",
+  "R-Gain",
+  "B-Gain",
+  "Light/Zoom"
 ];
 // 1688 Parameters
 const SIXTEENPARAMETERS = [
@@ -2476,215 +2499,228 @@ const CAMERASETTINGS = {
     "23"
   ],
   MULTIVISIONPRO1288: [
-    "32",
-    "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
-    "On",
-    "Auto",
-    "1",
-    "3",
-    "1",
-    "23"
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
   ],
-  ARTHRO1VISIONPRO1288: ["On", "88", "4", "0", "0", "Auto", "12"],
-  ARTHRO2VISIONPRO1288: [
-    "32",
-    "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
+  ARTHRO1VISIONPRO1288: [
+    "4 bars",
+    "5 bars",
+    "0 bars",
     "On",
+    "88",
+    "4",
+    "0",
+    "0",
     "Auto",
-    "1",
-    "3",
-    "1",
-    "23"
+    "12",
+    "0",
+    "On"
+  ],
+  ARTHRO2VISIONPRO1288: [
+    "4 bars",
+    "5 bars",
+    "0 bars",
+    "On",
+    "88",
+    "4",
+    "0",
+    "0",
+    "Auto",
+    "12",
+    "0",
+    "On"
   ],
   ARTHRO4_16VISIONPRO1288: [
-    "32",
-    "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
-    "On",
-    "Auto",
-    "1",
-    "3",
-    "1",
-    "23"
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
   ],
   LAP1VISIONPRO1288: [
-    "32",
-    "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
+    "4 bars",
+    "5 bars",
+    "0 bars",
     "On",
-    "Auto",
-    "1",
+    "88",
     "3",
-    "1",
-    "23"
+    "0",
+    "0",
+    "Auto",
+    "12",
+    "-20",
+    "On"
   ],
   LAP2VISIONPRO1288: [
-    "32",
-    "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
+    "4 bars",
+    "5 bars",
+    "0 bars",
     "On",
-    "Auto",
-    "1",
+    "88",
     "3",
-    "1",
-    "23"
+    "0",
+    "0",
+    "Auto",
+    "12",
+    "-20",
+    "On"
   ],
   LAPSTORZVISIONPRO1288: [
-    "32",
-    "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
-    "On",
-    "Auto",
-    "1",
-    "3",
-    "1",
-    "23"
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
   ],
   CYSTOVISIONPRO1288: [
-    "32",
-    "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
+    "3 bars",
+    "5 bars",
+    "0 bars",
     "On",
-    "Auto",
-    "1",
+    "88",
     "3",
-    "1",
-    "23"
+    "0",
+    "0",
+    "Auto",
+    "12",
+    "-10",
+    "On"
   ],
   HYSTEROSCOPYVISIONPRO1288: [
-    "32",
-    "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
+    "3 bars",
+    "5 bars",
+    "0 bars",
     "On",
-    "Auto",
-    "1",
+    "88",
     "3",
-    "1",
-    "23"
+    "0",
+    "0",
+    "Auto",
+    "12",
+    "-10",
+    "On"
   ],
   FLEXISCOPEVISIONPRO1288: [
-    "32",
-    "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
+    "3 bars",
+    "5 bars",
+    "0 bars",
     "On",
-    "Auto",
-    "1",
+    "88",
     "3",
-    "1",
-    "23"
+    "0",
+    "0",
+    "Auto",
+    "12",
+    "-10",
+    "On"
   ],
   ENTVISIONPRO1288: [
-    "32",
-    "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
+    "3 bars",
+    "5 bars",
+    "0 bars",
     "On",
-    "Auto",
-    "1",
+    "88",
     "3",
-    "1",
-    "23"
+    "0",
+    "0",
+    "Auto",
+    "12",
+    "-30",
+    "On"
   ],
   LASERVISIONPRO1288: [
-    "32",
-    "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
+    "3 bars",
+    "5 bars",
+    "0 bars",
     "On",
-    "Auto",
-    "1",
+    "88",
     "3",
-    "1",
-    "23"
+    "0",
+    "0",
+    "Auto",
+    "12",
+    "-10",
+    "On"
   ],
   MICROSCOPEVISIONPRO1288: [
-    "32",
-    "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
+    "4 bars",
+    "6 bars",
+    "0 bars",
     "On",
-    "Auto",
-    "1",
+    "88",
     "3",
-    "1",
-    "23"
+    "0",
+    "0",
+    "Auto",
+    "12",
+    "-10",
+    "On"
   ],
   STANDARDVISIONPRO1288: [
-    "32",
-    "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
+    "4 bars",
+    "5 bars",
+    "0 bars",
     "On",
-    "Auto",
-    "1",
+    "88",
     "3",
-    "1",
-    "23"
+    "0",
+    "0",
+    "Auto",
+    "12",
+    "-10",
+    "On"
   ],
   VEINHARVESTVISIONPRO1288: [
-    "32",
-    "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
-    "On",
-    "Auto",
-    "1",
-    "3",
-    "1",
-    "23"
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
   ],
   OLYMPUSGIVISIONPRO1288: [
-    "32",
-    "Normal",
-    "-10",
-    "-3",
-    "0",
-    "0",
-    "On",
-    "Auto",
-    "1",
-    "3",
-    "1",
-    "23"
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
   ],
   MULTIVISIONPRO1188: [
     "32",
@@ -3703,22 +3739,62 @@ const MONITORSETTINGS = {
   VISIONPROSTANDARD1488: ["-7", "5", "-10", "S0", "45", "55", "No Data"],
   VISIONPROVEINHARVEST1488: ["-50", "30", "10", "1.5", "47", "58", "No Data"],
   VISIONPROOLYMPUSGI1488: ["70", "46", "28", "S0", "37", "41"],
-  VISIONPROMULTI1288: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROARTHRO11288: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROARTHRO21288: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROARTHRO4_161288: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROLAP11288: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROLAP21288: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROLAPSTORZ1288: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROCYSTO1288: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROHYSTEROSCOPY1288: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROFLEXISCOPE1288: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROENT1288: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROLASER1288: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROMICROSCOPE1288: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROSTANDARD1288: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROVEINHARVEST1288: ["-20", "-20", "10", "S2", "45", "60"],
-  VISIONPROOLYMPUSGI1288: ["-20", "-20", "10", "S2", "45", "60"],
+  VISIONPROMULTI1288: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  VISIONPROARTHRO11288: ["-20", "-10", "5", "S2", "45", "60", "No Data"],
+  VISIONPROARTHRO21288: ["-20", "-10", "-10", "S2", "45", "60", "No Data"],
+  VISIONPROARTHRO4_161288: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  VISIONPROLAP11288: ["-35", "10", "5", "S2", "45", "60", "No Data"],
+  VISIONPROLAP21288: ["-25", "-25", "10", "S2", "45", "60", "No Data"],
+  VISIONPROLAPSTORZ1288: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  VISIONPROCYSTO1288: ["-35", "10", "5", "S2", "45", "60", "No Data"],
+  VISIONPROHYSTEROSCOPY1288: ["-45", "10", "5", "S2", "45", "60", "No Data"],
+  VISIONPROFLEXISCOPE1288: ["-25", "-25", "2", "S2", "45", "50", "No Data"],
+  VISIONPROENT1288: ["-50", "0", "10", "1.5", "47", "57", "No Data"],
+  VISIONPROLASER1288: ["-35", "10", "5", "S2", "45", "60", "No Data"],
+  VISIONPROMICROSCOPE1288: ["-35", "10", "5", "S3", "45", "60", "No Data"],
+  VISIONPROSTANDARD1288: ["-10", "5", "10", "S0", "45", "55", "No Data"],
+  VISIONPROVEINHARVEST1288: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
+  VISIONPROOLYMPUSGI1288: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
   HDTVWISEMULTI1288: ["-20", "-20", "10", "S2", "45", "60"],
   HDTVWISEARTHRO11288: ["-20", "-20", "10", "S2", "45", "60"],
   HDTVWISEARTHRO21288: ["-20", "-20", "10", "S2", "45", "60"],
@@ -4139,7 +4215,8 @@ function displaySettings(cameraDisplaySpecialty) {
   ccuSettingsUpCase = ccuSettings.toUpperCase();
   if (
     cameraDisplaySpecialty.camera !== "1688" &&
-    cameraDisplaySpecialty.camera !== "1288"
+    cameraDisplaySpecialty.camera !== "1288" &&
+    cameraDisplaySpecialty.camera !== "1188"
   ) {
     // CCU Parameters
     CCUPARAMETERS.forEach(function(parameter) {
@@ -4161,7 +4238,26 @@ function displaySettings(cameraDisplaySpecialty) {
     }
   } else if (cameraDisplaySpecialty.camera === "1288") {
     // 1288 Parameters
-    TWELVESHUTTERPARAMETERS.forEach(function(parameter) {
+    TWELVEPARAMETERS.forEach(function(parameter) {
+      let cameraParameter = document.createElement("p");
+      cameraParameter.appendChild(document.createTextNode(parameter));
+      cameraParameterDiv.appendChild(cameraParameter);
+      parentDiv.appendChild(cameraParameterDiv);
+    });
+
+    for (let setting in CAMERASETTINGS) {
+      if (ccuSettingsUpCase === setting) {
+        CAMERASETTINGS[setting].forEach(function(setting) {
+          let cameraSettings = document.createElement("p");
+          cameraSettings.appendChild(document.createTextNode(setting));
+          cameraSettingsDiv.appendChild(cameraSettings);
+          parentDiv.appendChild(cameraSettingsDiv);
+        });
+      }
+    }
+  } else if (cameraDisplaySpecialty.camera === "1188") {
+    // 1188 Parameters
+    ELEVENPARAMETERS.forEach(function(parameter) {
       let cameraParameter = document.createElement("p");
       cameraParameter.appendChild(document.createTextNode(parameter));
       cameraParameterDiv.appendChild(cameraParameter);
