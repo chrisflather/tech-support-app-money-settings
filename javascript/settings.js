@@ -52,6 +52,19 @@ TWELVESPECIALTIES = [
   "Standard"
 ];
 
+ELEVENSPECIALTIES = [
+  "Arthro",
+  "Lap 1",
+  "Lap 2",
+  "Cysto",
+  "Hysto",
+  "Flexiscope",
+  "ENT",
+  "Laser",
+  "Microscope",
+  "Standard"
+];
+
 let ccuSettings;
 let ccuSettingsUpCase;
 // CCU Params
@@ -3996,12 +4009,20 @@ CameraDisplayObject.prototype.displaySpecialties = function() {
   hDiv.appendChild(hElement);
   specialtyTopDiv.appendChild(hDiv);
   // specialty div
-  if (this.camera !== "1688" && this.camera !== "1288") {
+  if (
+    this.camera !== "1688" &&
+    this.camera !== "1288" &&
+    this.camera !== "1188"
+  ) {
     SPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
   } else if (this.camera === "1288") {
     TWELVESPECIALTIES.forEach(function(specialty) {
+      specialtyDiv(specialty);
+    });
+  } else if (this.camera === "1188") {
+    ELEVENSPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
   } else {
