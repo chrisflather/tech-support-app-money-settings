@@ -3776,6 +3776,8 @@ function showDisplays(camera) {
   let hElement = document.createElement("h1");
   hElement.append("Select Display");
   displayTopDiv.setAttribute("style", "margin-top: 5em;");
+  hDiv.appendChild(hElement);
+  displayTopDiv.appendChild(hDiv);
 
   // Monitor Variables
   const hdtvWise = () => {
@@ -3788,8 +3790,6 @@ function showDisplays(camera) {
     wiseLink.setAttribute("href", "#");
     wiseLink.setAttribute("rel", "nofollow noopener");
     wiseLink.appendChild(document.createTextNode("HDTV Wise"));
-    hDiv.appendChild(hElement);
-    displayTopDiv.appendChild(hDiv);
     wiseDisplayDiv.appendChild(wiseLink);
     displayTopDiv.appendChild(wiseDisplayDiv);
   };
@@ -3803,8 +3803,6 @@ function showDisplays(camera) {
     vpLink.setAttribute("href", "#");
     vpLink.setAttribute("rel", "nofollow noopener");
     vpLink.appendChild(document.createTextNode("Visionpro"));
-    hDiv.appendChild(hElement);
-    displayTopDiv.appendChild(hDiv);
     vpDisplayDiv.appendChild(vpLink);
     displayTopDiv.appendChild(vpDisplayDiv);
   };
