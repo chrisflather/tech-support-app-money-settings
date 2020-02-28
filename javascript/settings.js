@@ -20,7 +20,17 @@ const SPECIALTIES = [
   "Vein Harvest",
   "Olympus GI"
 ];
-const PRECISION4KSPECIALTIES = ["Arthro 1", "Hysteroscopy", "ENT/Skull"];
+const PRECISION4KSPECIALTIES = ["Arthro 1", "Hysteroscopy", "ENT"];
+const PRECISIONSPECIALTIES = [
+  "Multi",
+  "Arthro 1",
+  "Arthro 2",
+  "Lap 1",
+  "Lap 2",
+  "Cysto",
+  "Hysteroscopy",
+  "ENT"
+];
 const SIXTEENSPECIALTIES = [
   "Lap 1",
   "Lap 2",
@@ -38,6 +48,7 @@ const SIXTEENSPECIALTIES = [
   "Olympus GI",
   "Vien Harvest"
 ];
+const SIXTEENVISIONPROSPECIALTIES = ["Lap 1", "Lap 2", "Lap Storz"];
 TWELVESPECIALTIES = [
   "Arthro 1",
   "Arthro 2",
@@ -1854,6 +1865,48 @@ const CAMERASETTINGS = {
     "No Data",
     "No Data"
   ],
+  ARTHRO1FOURKPRECISIONAC: [
+    "16",
+    "Normal",
+    "0",
+    "-7",
+    "0",
+    "0",
+    "On",
+    "Auto",
+    "0",
+    "5",
+    "1",
+    "19"
+  ],
+  HYSTEROSCOPYFOURKPRECISIONAC: [
+    "18",
+    "Normal",
+    "-12",
+    "-3",
+    "0",
+    "0",
+    "On",
+    "Auto",
+    "0",
+    "3",
+    "1",
+    "19"
+  ],
+  ENTFOURKPRECISIONAC: [
+    "18",
+    "Normal",
+    "-15",
+    "-5",
+    "0",
+    "0",
+    "On",
+    "Auto",
+    "0",
+    "3",
+    "2",
+    "19"
+  ],
   MULTIVISIONPRO1488: [
     "No Data",
     "No Data",
@@ -3329,6 +3382,18 @@ const MONITORSETTINGS = {
     "No Data",
     "No Data"
   ],
+  FOURKARTHRO1PRECISIONAC: ["-30", "-5", "30", "1.5", "Off", "40", "60", "5"],
+  FOURKHYSTEROSCOPYPRECISIONAC: [
+    "-30",
+    "-5",
+    "30",
+    "1.5",
+    "Off",
+    "40",
+    "60",
+    "5"
+  ],
+  FOURKENTPRECISIONAC: ["-45", "-5", "30", "1.5", "Off", "40", "60", "5"],
   VISIONPROMULTIPRECISIONAC: ["-30", "-30", "5", "S2", "45", "60", "No Data"],
   VISIONPROARTHRO1PRECISIONAC: [
     "-20",
@@ -3878,7 +3943,6 @@ CameraDisplayObject.prototype.displaySpecialties = function() {
   hDiv.appendChild(hElement);
   specialtyTopDiv.appendChild(hDiv);
   // specialty div
-  console.log(this);
   if (
     this.camera === "Precision AC" &&
     this.display === "FourK"
@@ -3889,9 +3953,14 @@ CameraDisplayObject.prototype.displaySpecialties = function() {
     PRECISION4KSPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
-    // SPECIALTIES.forEach(function(specialty) {
-    //   specialtyDiv(specialty);
-    // });
+  } else if (this.camera === "Precision AC") {
+    PRECISIONSPECIALTIES.forEach(function(specialty) {
+      specialtyDiv(specialty);
+    });
+  } else if (this.camera === "1688" && this.display === "VisionPro") {
+    SIXTEENVISIONPROSPECIALTIES.forEach(function(specialty) {
+      specialtyDiv(specialty);
+    });
   } else if (this.camera === "1288") {
     TWELVESPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
@@ -3928,7 +3997,7 @@ function selectSpecialty(cameraDisplay) {
   let specialtyTopDiv = document.getElementById("specialtyTopDiv");
   for (let button of specialtyButton) {
     button.addEventListener("click", function() {
-      let displayTopDiv = document.getElementById("displayTopDiv");
+      // let displayTopDiv = document.getElementById("displayTopDiv");
       specialtyTopDiv.classList.add("specialtySelectDiv");
       let cameraDisplaySpecialty = {
         camera: cameraDisplay.camera,
@@ -3980,6 +4049,7 @@ function displaySettings(cameraDisplaySpecialty) {
     cameraDisplaySpecialty.display.replace(/\s/g, "").toUpperCase() +
     cameraDisplaySpecialty.camera.replace(/\s/g, "").toUpperCase();
   ccuSettingsUpCase = ccuSettings.toUpperCase();
+  console.log(ccuSettingsUpCase);
   if (
     cameraDisplaySpecialty.camera !== "1688" &&
     cameraDisplaySpecialty.camera !== "1288" &&
@@ -4059,7 +4129,6 @@ function displaySettings(cameraDisplaySpecialty) {
       }
     }
   }
-
   // Applying Headers to DOM
   ccuSettingsTopDiv.appendChild(headerDiv); // Parameter Header
   ccuSettingsTopDiv.appendChild(headerDiv); // Settings Header
