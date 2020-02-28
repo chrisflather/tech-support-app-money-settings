@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   selectCamera();
 });
-// Constants
 const SPECIALTIES = [
   "Multi",
   "Arthro 1",
@@ -65,7 +64,6 @@ TWELVESPECIALTIES = [
   "Microscope",
   "Standard"
 ];
-
 ELEVENSPECIALTIES = [
   "Arthro",
   "Lap 1",
@@ -3869,9 +3867,13 @@ const FOURKSETTINGS = {
   FOURKVIENHARVEST1688: ["TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD"]
 };
 
+const backButton = () => {
+  console.log("sup");
+  let resetButton = document.getElementById("money-settings");
+};
+
 function selectCamera() {
   let cameraButton = document.getElementsByClassName("example_a");
-  // let cameraDiv = document.getElementById("top-camera-div");
   for (let item of cameraButton) {
     item.addEventListener("click", function(item) {
       let cameraTopDiv = document.getElementById("top-camera-div");
