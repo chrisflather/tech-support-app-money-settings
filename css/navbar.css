@@ -35,6 +35,14 @@
   padding-top: 10px;
 }
 
+#back-button {
+  display: none;
+}
+
+.money-settings-toggle {
+  display: none;
+}
+
 .navbar-toggle {
   position: absolute;
   top: 10px;

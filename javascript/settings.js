@@ -3868,8 +3868,10 @@ const FOURKSETTINGS = {
 };
 
 const backButton = () => {
-  console.log("sup");
-  let resetButton = document.getElementById("money-settings");
+  let moneySettingsToggle = document.getElementById("money-settings");
+  let backButtonToggle = document.getElementById("back-button");
+  moneySettingsToggle.setAttribute("class", "money-settings-toggle");
+  backButtonToggle.style.display = "block";
 };
 
 function selectCamera() {
@@ -3880,6 +3882,7 @@ function selectCamera() {
       cameraTopDiv.classList.add("cameraSelectDiv");
       let camera = this.dataset.camera;
       showDisplays(camera);
+      backButton();
     });
   }
 }
@@ -3984,7 +3987,6 @@ function CameraDisplayObject(camera, display) {
 }
 // Object prototype
 CameraDisplayObject.prototype.displaySpecialties = function() {
-  // let specialityTopDiv = document.getElementById("specialtyTopDiv");
   let hDiv = document.createElement("div");
   hDiv.setAttribute("class", "title-div");
   let hElement = document.createElement("h1");
@@ -3992,13 +3994,7 @@ CameraDisplayObject.prototype.displaySpecialties = function() {
   hDiv.appendChild(hElement);
   specialtyTopDiv.appendChild(hDiv);
   // specialty div
-  if (
-    this.camera === "Precision AC" &&
-    this.display === "FourK"
-    // this.camera !== "1688" &&
-    // this.camera !== "1288" &&
-    // this.camera !== "1188"
-  ) {
+  if (this.camera === "Precision AC" && this.display === "FourK") {
     PRECISION4KSPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
@@ -4110,7 +4106,6 @@ function displaySettings(cameraDisplaySpecialty) {
     cameraDisplaySpecialty.display.replace(/\s/g, "").toUpperCase() +
     cameraDisplaySpecialty.camera.replace(/\s/g, "").toUpperCase();
   ccuSettingsUpCase = ccuSettings.toUpperCase();
-  console.log(ccuSettingsUpCase);
   if (
     cameraDisplaySpecialty.camera !== "1688" &&
     cameraDisplaySpecialty.camera !== "1288" &&
