@@ -3583,7 +3583,7 @@ const MONITORSETTINGS = {
   VISIONPROMICROSCOPE1488: ["-35", "10", "5", "S3", "45", "60", "No Data"],
   VISIONPROSTANDARD1488: ["-7", "5", "-10", "S0", "45", "55", "No Data"],
   VISIONPROVEINHARVEST1488: ["-50", "30", "10", "1.5", "47", "58", "No Data"],
-  VISIONPROOLYMPUSGI1488: ["70", "46", "28", "S0", "37", "41"],
+  VISIONPROOLYMPUSGI1488: ["70", "46", "28", "S0", "37", "41", "No Data"],
   VISIONPROARTHRO11288: ["-20", "-10", "5", "S2", "45", "60", "No Data"],
   VISIONPROARTHRO21288: ["-20", "-10", "-10", "S2", "45", "60", "No Data"],
   VISIONPROLAP11288: ["-35", "10", "5", "S2", "45", "60", "No Data"],
@@ -3776,36 +3776,9 @@ function showDisplays(camera) {
   let hElement = document.createElement("h1");
   hElement.append("Select Display");
   displayTopDiv.setAttribute("style", "margin-top: 5em;");
-  if (camera === "1688") {
-    // Visionpro
-    let vpDisplayDiv = document.createElement("div");
-    let vpLink = document.createElement("a");
-    vpDisplayDiv.setAttribute("class", "display-button-div");
-    vpDisplayDiv.setAttribute("align", "center");
-    vpLink.setAttribute("class", "example_a");
-    vpLink.setAttribute("data-display", "VisionPro");
-    vpLink.setAttribute("href", "#");
-    vpLink.setAttribute("rel", "nofollow noopener");
-    vpLink.appendChild(document.createTextNode("Visionpro"));
-    hDiv.appendChild(hElement);
-    displayTopDiv.appendChild(hDiv);
-    vpDisplayDiv.appendChild(vpLink);
-    displayTopDiv.appendChild(vpDisplayDiv);
-    // 4K
-    let fourKDisplayDiv = document.createElement("div");
-    let fourKLink = document.createElement("a");
-    fourKDisplayDiv.setAttribute("class", "display-button-div");
-    fourKDisplayDiv.setAttribute("align", "center");
-    fourKLink.setAttribute("class", "example_a");
-    fourKLink.setAttribute("data-display", "FourK");
-    fourKLink.setAttribute("href", "#");
-    fourKLink.setAttribute("rel", "nofollow noopener");
-    fourKLink.appendChild(document.createTextNode("4K"));
-    fourKDisplayDiv.appendChild(fourKLink);
-    displayTopDiv.appendChild(fourKDisplayDiv);
-    selectDisplay(camera);
-  } else if (camera === "1588") {
-    // HDTV Wise
+
+  // Monitor Variables
+  const hdtvWise = () => {
     let wiseDisplayDiv = document.createElement("div");
     let wiseLink = document.createElement("a");
     wiseDisplayDiv.setAttribute("class", "display-button-div");
@@ -3819,8 +3792,8 @@ function showDisplays(camera) {
     displayTopDiv.appendChild(hDiv);
     wiseDisplayDiv.appendChild(wiseLink);
     displayTopDiv.appendChild(wiseDisplayDiv);
-
-    // Visionpro
+  };
+  const visionPro = () => {
     let vpDisplayDiv = document.createElement("div");
     let vpLink = document.createElement("a");
     vpDisplayDiv.setAttribute("class", "display-button-div");
@@ -3830,10 +3803,12 @@ function showDisplays(camera) {
     vpLink.setAttribute("href", "#");
     vpLink.setAttribute("rel", "nofollow noopener");
     vpLink.appendChild(document.createTextNode("Visionpro"));
+    hDiv.appendChild(hElement);
+    displayTopDiv.appendChild(hDiv);
     vpDisplayDiv.appendChild(vpLink);
     displayTopDiv.appendChild(vpDisplayDiv);
-
-    // 4K
+  };
+  const fourK = () => {
     let fourKDisplayDiv = document.createElement("div");
     let fourKLink = document.createElement("a");
     fourKDisplayDiv.setAttribute("class", "display-button-div");
@@ -3845,35 +3820,21 @@ function showDisplays(camera) {
     fourKLink.appendChild(document.createTextNode("4K"));
     fourKDisplayDiv.appendChild(fourKLink);
     displayTopDiv.appendChild(fourKDisplayDiv);
+  };
+
+  if (camera === "1688") {
+    // Visionpro
+    visionPro();
+    // 4K
+    fourK();
     selectDisplay(camera);
   } else {
     // HDTV Wise
-    let wiseDisplayDiv = document.createElement("div");
-    let wiseLink = document.createElement("a");
-    wiseDisplayDiv.setAttribute("class", "display-button-div");
-    wiseDisplayDiv.setAttribute("align", "center");
-    wiseLink.setAttribute("class", "example_a");
-    wiseLink.setAttribute("data-display", "HDTV Wise");
-    wiseLink.setAttribute("href", "#");
-    wiseLink.setAttribute("rel", "nofollow noopener");
-    wiseLink.appendChild(document.createTextNode("HDTV Wise"));
-    hDiv.appendChild(hElement);
-    displayTopDiv.appendChild(hDiv);
-    wiseDisplayDiv.appendChild(wiseLink);
-    displayTopDiv.appendChild(wiseDisplayDiv);
-
+    hdtvWise();
     // Visionpro
-    let vpDisplayDiv = document.createElement("div");
-    let vpLink = document.createElement("a");
-    vpDisplayDiv.setAttribute("class", "display-button-div");
-    vpDisplayDiv.setAttribute("align", "center");
-    vpLink.setAttribute("class", "example_a");
-    vpLink.setAttribute("data-display", "VisionPro");
-    vpLink.setAttribute("href", "#");
-    vpLink.setAttribute("rel", "nofollow noopener");
-    vpLink.appendChild(document.createTextNode("Visionpro"));
-    vpDisplayDiv.appendChild(vpLink);
-    displayTopDiv.appendChild(vpDisplayDiv);
+    visionPro();
+    // 4K
+    fourK();
     selectDisplay(camera);
   }
   // Button selection
@@ -3905,7 +3866,7 @@ function CameraDisplayObject(camera, display) {
 }
 // Object prototype
 CameraDisplayObject.prototype.displaySpecialties = function() {
-  let specialityTopDiv = document.getElementById("specialtyTopDiv");
+  // let specialityTopDiv = document.getElementById("specialtyTopDiv");
   let hDiv = document.createElement("div");
   hDiv.setAttribute("class", "title-div");
   let hElement = document.createElement("h1");
@@ -4189,6 +4150,7 @@ function displaySettings(cameraDisplaySpecialty) {
     }
   }
 
+  // Settings divs
   secondDiv.appendChild(monitorParams);
   secondDiv.appendChild(monitorSettings);
   monitorMainDiv.appendChild(secondDiv);
