@@ -20,6 +20,7 @@ const SPECIALTIES = [
   "Vein Harvest",
   "Olympus GI"
 ];
+const PRECISION4KSPECIALTIES = ["Arthro 1", "Hysteroscopy", "ENT/Skull"];
 const SIXTEENSPECIALTIES = [
   "Lap 1",
   "Lap 2",
@@ -3826,6 +3827,12 @@ function showDisplays(camera) {
     // 4K
     fourK();
     selectDisplay(camera);
+  } else if (camera === "1188") {
+    // HDTV Wise
+    hdtvWise();
+    // Visionpro
+    visionPro();
+    selectDisplay(camera);
   } else {
     // HDTV Wise
     hdtvWise();
@@ -3840,7 +3847,6 @@ function showDisplays(camera) {
 
 function selectDisplay(camera) {
   let displayButton = document.getElementsByClassName("example_a");
-
   // Loop over buttons
   for (let button of displayButton) {
     button.addEventListener("click", function() {
@@ -3872,14 +3878,20 @@ CameraDisplayObject.prototype.displaySpecialties = function() {
   hDiv.appendChild(hElement);
   specialtyTopDiv.appendChild(hDiv);
   // specialty div
+  console.log(this);
   if (
-    this.camera !== "1688" &&
-    this.camera !== "1288" &&
-    this.camera !== "1188"
+    this.camera === "Precision AC" &&
+    this.display === "FourK"
+    // this.camera !== "1688" &&
+    // this.camera !== "1288" &&
+    // this.camera !== "1188"
   ) {
-    SPECIALTIES.forEach(function(specialty) {
+    PRECISION4KSPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
+    // SPECIALTIES.forEach(function(specialty) {
+    //   specialtyDiv(specialty);
+    // });
   } else if (this.camera === "1288") {
     TWELVESPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
