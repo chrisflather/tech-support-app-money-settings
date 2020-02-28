@@ -21,6 +21,7 @@ const SPECIALTIES = [
   "Olympus GI"
 ];
 const PRECISION4KSPECIALTIES = ["Arthro 1", "Hysteroscopy", "ENT"];
+const FOURTEENFOURKPROSPECIALTIES = ["Arthro", "Lap"];
 const PRECISIONSPECIALTIES = [
   "Multi",
   "Arthro 1",
@@ -2356,6 +2357,34 @@ const CAMERASETTINGS = {
     "No Data",
     "No Data"
   ],
+  ARTHROFOURK1488: [
+    "24",
+    "Normal",
+    "-15",
+    "15",
+    "0",
+    "0",
+    "On",
+    "Auto",
+    "0",
+    "3",
+    "2",
+    "25"
+  ],
+  LAPFOURK1488: [
+    "30",
+    "Normal",
+    "-10",
+    "-2",
+    "0",
+    "0",
+    "On",
+    "Auto",
+    "0",
+    "3",
+    "1",
+    "23"
+  ],
   MULTIHDTVWISE1288: [
     "No Data",
     "No Data",
@@ -3586,6 +3615,8 @@ const MONITORSETTINGS = {
     "No Data",
     "No Data"
   ],
+  FOURKARTHRO1488: ["-10", "-2", "8", "S0", "Off", "43", "54", "7"],
+  FOURKLAP1488: ["-10", "30", "25", "1.5", "Off", "50", "50", "5"],
   HDTVWISEMULTI1488: ["-30", "-15", "10", "S2", "45", "58", "No Data"],
   HDTVWISEARTHRO11488: ["-25", "-25", "2", "S2", "45", "58", "No Data"],
   HDTVWISEARTHRO21488: ["-27", "-2", "14", "S1", "50", "55", "No Data"],
@@ -3955,6 +3986,14 @@ CameraDisplayObject.prototype.displaySpecialties = function() {
     });
   } else if (this.camera === "Precision AC") {
     PRECISIONSPECIALTIES.forEach(function(specialty) {
+      specialtyDiv(specialty);
+    });
+  } else if (this.camera === "1488" && this.display === "FourK") {
+    FOURTEENFOURKPROSPECIALTIES.forEach(function(specialty) {
+      specialtyDiv(specialty);
+    });
+  } else if (this.camera === "1488") {
+    SPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
   } else if (this.camera === "1688" && this.display === "VisionPro") {
