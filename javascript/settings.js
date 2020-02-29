@@ -3467,7 +3467,7 @@ const MONITORSETTINGS = {
     "No Data",
     "No Data"
   ],
-  VISIONPROCYSTOSPRECISIONAC: ["-35", "5", "5", "S2", "45", "60", "No Data"],
+  VISIONPROCYSTOPRECISIONAC: ["-35", "5", "5", "S2", "45", "60", "No Data"],
   VISIONPROHYSTEROSCOPYPRECISIONAC: [
     "-40",
     "10",
@@ -3477,61 +3477,7 @@ const MONITORSETTINGS = {
     "60",
     "No Data"
   ],
-  VISIONPROFLEXISCOPEPRECISIONAC: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
-  ],
   VISIONPROENTPRECISIONAC: ["-50", "30", "10", "1.5", "47", "58", "No Data"],
-  VISIONPROLASERPRECISIONAC: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
-  ],
-  VISIONPROMICROSCOPEPRECISIONAC: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
-  ],
-  VISIONPROSTANDARDPRECISIONAC: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
-  ],
-  VISIONPROVEINHARVESTPRECISIONAC: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
-  ],
-  VISIONPROOLYMPUSGIPRECISIONAC: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
-  ],
   HDTVWISEMULTIPRECISIONAC: ["-30", "-15", "10", "S2", "45", "58", "No Data"],
   HDTVWISEARTHRO1PRECISIONAC: ["-25", "-25", "2", "S2", "50", "50", "No Data"],
   HDTVWISEARTHRO2PRECISIONAC: ["-27", "-2", "14", "S1", "50", "55", "No Data"],
@@ -3856,7 +3802,7 @@ const FOURKSETTINGS = {
     "No Data",
     "No Data"
   ],
-  FOURKFLEXISCOPE1688: ["-35", "0", "10", "S0", "Mid", "45", "No Data"],
+  FOURKFLEXISCOPE1688: ["-35", "0", "10", "S0", "Mid", "45", "70", "No Data"],
   FOURKCYSTO1688: ["-35", "0", "10", "S0", "Mid", "45", "70", "No Data"],
   FOURKARTHRO11688: ["-10", "10", "5", "S4", "Low", "37", "54", "No Data"],
   FOURKARTHRO21688: ["-15", "-5", "8", "S7", "Low", "37", "52", "No Data"],
@@ -4006,7 +3952,7 @@ CameraDisplayObject.prototype.displaySpecialties = function() {
     FOURTEENFOURKPROSPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
-  } else if (this.camera === "1488") {
+  } else if (this.camera === "1488" || this.camera === "1588") {
     SPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
