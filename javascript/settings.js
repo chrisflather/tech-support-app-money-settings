@@ -2837,7 +2837,7 @@ const CAMERASETTINGS = {
     "0",
     "Light"
   ],
-  HYSTEROSCOPYVISIONPRO1188: [
+  HYSTOVISIONPRO1188: [
     "5 bars",
     "5 bars ",
     "0 bars",
@@ -3019,7 +3019,7 @@ const CAMERASETTINGS = {
     "0",
     "Light"
   ],
-  HYSTEROSCOPYHDTVWISE1188: [
+  HYSTOHDTVWISE1188: [
     "5 bars",
     "5 bars ",
     "0 bars",
@@ -3685,7 +3685,7 @@ const MONITORSETTINGS = {
   HDTVWISELAP11188: ["8", "0", "2", "S0", "50", "50", "No Data"],
   HDTVWISELAP21188: ["-10", "-14", "12", "S0", "45", "55", "No Data"],
   HDTVWISECYSTO1188: ["8", "0", "2", "S0", "50", "50", "No Data"],
-  HDTVWISEHYSTEROSCOPY1188: ["8", "0", "2", "S0", "50", "50", "No Data"],
+  HDTVWISEHYSTO1188: ["8", "0", "2", "S0", "50", "50", "No Data"],
   HDTVWISEFLEXISCOPE1188: ["8", "0", "2", "S0", "50", "50"],
   HDTVWISEENT1188: ["8", "0", "2", "S0", "50", "50", "No Data"],
   HDTVWISELASER1188: ["-25", "-5", "10", "S1", "45", "50", "No Data"],
@@ -3695,7 +3695,7 @@ const MONITORSETTINGS = {
   VISIONPROLAP11188: ["-35", "10", "5", "S2", "45", "60", "No Data"],
   VISIONPROLAP21188: ["-35", "5", "5", "S2", "40", "65", "No Data"],
   VISIONPROCYSTO1188: ["-45", "10", "5", "S2", "45", "60", "No Data"],
-  VISIONPROHYSTEROSCOPY1188: ["-45", "10", "5", "S2", "45", "60", "No Data"],
+  VISIONPROHYSTO1188: ["-45", "10", "5", "S2", "45", "60", "No Data"],
   VISIONPROFLEXISCOPE1188: ["-30", "10", "5", "S2", "45", "55", "No Data"],
   VISIONPROENT1188: ["-30", "-30", "10", "S2", "45", "5", "No Data"],
   VISIONPROLASER1188: ["-30", "10", "5", "S2", "45", "55", "No Data"],
