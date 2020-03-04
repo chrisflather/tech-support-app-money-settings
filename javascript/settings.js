@@ -21,7 +21,7 @@ const SPECIALTIES = [
 ];
 const PRECISION4KSPECIALTIES = ["Arthro 1", "Hysteroscopy", "ENT"];
 const FOURTEENFOURKPROSPECIALTIES = ["Arthro", "Lap"];
-const FOURTEENVISIONPROSPECIALTIES = [
+const FOURTEENSPECIALTIES = [
   "Multi",
   "Arthro 1",
   "Arthro 2",
@@ -3969,14 +3969,11 @@ CameraDisplayObject.prototype.displaySpecialties = function() {
     FOURTEENFOURKPROSPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
-
-    // 1488 HDTV/Visiopro - 3/4/20
-  } else if (this.camera === "1488" && this.display === "VisionPro") {
-    FOURTEENVISIONPROSPECIALTIES.forEach(function(specialty) {
-      specialtyDiv(specialty);
-    });
-  } else if (this.camera === "1488" && this.display === "HDTV Wise") {
-    FOURTEENVISIONPROSPECIALTIES.forEach(function(specialty) {
+  } else if (
+    this.camera === "1488" &&
+    (this.display === "VisionPro" || this.display === "HDTV Wise")
+  ) {
+    FOURTEENSPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
   } else if (this.camera === "1588") {
@@ -3991,11 +3988,10 @@ CameraDisplayObject.prototype.displaySpecialties = function() {
     TWELVEFOURKSPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
-  } else if (this.camera === "1288" && this.display === "HDTV Wise") {
-    TWELVESPECIALTIES.forEach(function(specialty) {
-      specialtyDiv(specialty);
-    });
-  } else if (this.camera === "1288" && this.display === "VisionPro") {
+  } else if (
+    this.camera === "1288" &&
+    (this.display === "VisionPro" || this.display === "HDTV Wise")
+  ) {
     TWELVESPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
