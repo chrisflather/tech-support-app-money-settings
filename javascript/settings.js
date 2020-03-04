@@ -21,6 +21,22 @@ const SPECIALTIES = [
 ];
 const PRECISION4KSPECIALTIES = ["Arthro 1", "Hysteroscopy", "ENT"];
 const FOURTEENFOURKPROSPECIALTIES = ["Arthro", "Lap"];
+const FOURTEENVISIONPROSPECIALTIES = [
+  "Multi",
+  "Arthro 1",
+  "Arthro 2",
+  "Lap 1",
+  "Lap 2",
+  "Cysto",
+  "Hysteroscopy",
+  "Flexiscope",
+  "ENT",
+  "Laser",
+  "Microscope",
+  "Standard",
+  "Vein Harvest",
+  "Olympus GI"
+];
 const TWELVEFOURKSPECIALTIES = ["Arthro"];
 const PRECISIONSPECIALTIES = [
   "Multi",
@@ -3933,6 +3949,7 @@ function CameraDisplayObject(camera, display) {
 }
 // Object prototype
 CameraDisplayObject.prototype.displaySpecialties = function() {
+  console.log(this.display);
   let hDiv = document.createElement("div");
   hDiv.setAttribute("class", "title-div");
   let hElement = document.createElement("h1");
@@ -3952,7 +3969,17 @@ CameraDisplayObject.prototype.displaySpecialties = function() {
     FOURTEENFOURKPROSPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
-  } else if (this.camera === "1488" || this.camera === "1588") {
+
+    // 1488 HDTV/Visiopro - 3/4/20
+  } else if (this.camera === "1488" && this.display === "VisionPro") {
+    FOURTEENVISIONPROSPECIALTIES.forEach(function(specialty) {
+      specialtyDiv(specialty);
+    });
+  } else if (this.camera === "1488" && this.display === "HDTV Wise") {
+    FOURTEENVISIONPROSPECIALTIES.forEach(function(specialty) {
+      specialtyDiv(specialty);
+    });
+  } else if (this.camera === "1588") {
     SPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
@@ -3964,7 +3991,11 @@ CameraDisplayObject.prototype.displaySpecialties = function() {
     TWELVEFOURKSPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
-  } else if (this.camera === "1288") {
+  } else if (this.camera === "1288" && this.display === "HDTV Wise") {
+    TWELVESPECIALTIES.forEach(function(specialty) {
+      specialtyDiv(specialty);
+    });
+  } else if (this.camera === "1288" && this.display === "VisionPro") {
     TWELVESPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
