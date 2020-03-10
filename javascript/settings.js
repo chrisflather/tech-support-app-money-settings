@@ -136,9 +136,16 @@ ELEVENSPECIALTIES = [
   "Microscope",
   "Standard"
 ];
+FLEXIBLESPECIALTIES = [
+  "5mm Flex Lap",
+  "10mm Flex Lap",
+  "Digital Flex Cysto",
+  "Digital flex Uretero",
+  "Olympus CV-190 GI"
+];
 
 let ccuSettings;
-let ccuSettingsUpCase;
+// let ccuSettingsUpCase;
 // CCU Params
 const CCUPARAMETERS = [
   "Enhancement",
@@ -215,6 +222,7 @@ const SIXTEENPARAMETERS = [
   "ENV Gamma",
   "ENV Max Gain"
 ];
+const FLEXIBLEPARAMETERS = ["R-Gain", "R-Hue", "B-Peak", "B-Gain", "B-Hue"];
 
 // Sixteen CCU Settings
 const SIXTEENSETTINGS = {
@@ -3172,6 +3180,13 @@ const CAMERASETTINGS = {
     "0",
     "Light"
   ],
+  // Flexible Scope Settings
+  FIVEFLEXLAPVISIONELECT21FLEXIBLE: ["-2", "1", "6", "0", "0"],
+  FIVEFLEXLAPWISE19FLEXIBLE: ["-2", "1", "6", "0", "0"],
+  FIVEFLEXLAPHDTVWISEFLEXIBLE: ["-2", "1", "6", "0", "0"],
+  TENFLEXLAPVISIONELECT21FLEXIBLE: ["-2", "1", "6", "0", "0"],
+  DIGITALFLEXCYSTOVISIONELECT21FLEXIBLE: ["6", "6", "6", "-22", "-22"],
+
   MULTIFOURK1588: [
     "26",
     "Normal",
@@ -3904,6 +3919,32 @@ function showDisplays(camera) {
     wiseDisplayDiv.appendChild(wiseLink);
     displayTopDiv.appendChild(wiseDisplayDiv);
   };
+  const VisionElectTwentyOne = () => {
+    let visionElectTwentyOneDisplayDiv = document.createElement("div");
+    let visionElectLink = document.createElement("a");
+    visionElectTwentyOneDisplayDiv.setAttribute("class", "display-button-div");
+    visionElectTwentyOneDisplayDiv.setAttribute("align", "center");
+    visionElectLink.setAttribute("class", "example_a");
+    visionElectLink.setAttribute("data-display", "Vision Elect 21");
+    visionElectLink.setAttribute("href", "#");
+    visionElectLink.setAttribute("rel", "nofollow noopener");
+    visionElectLink.appendChild(document.createTextNode("Vision Elect 21"));
+    visionElectTwentyOneDisplayDiv.appendChild(visionElectLink);
+    displayTopDiv.appendChild(visionElectTwentyOneDisplayDiv);
+  };
+  const wiseNineteen = () => {
+    let wiseNineteenDisplayDiv = document.createElement("div");
+    let wiseNineteenLink = document.createElement("a");
+    wiseNineteenDisplayDiv.setAttribute("class", "display-button-div");
+    wiseNineteenDisplayDiv.setAttribute("align", "center");
+    wiseNineteenLink.setAttribute("class", "example_a");
+    wiseNineteenLink.setAttribute("data-display", "Wise 19");
+    wiseNineteenLink.setAttribute("href", "#");
+    wiseNineteenLink.setAttribute("rel", "nofollow noopener");
+    wiseNineteenLink.appendChild(document.createTextNode("Wise 19"));
+    wiseNineteenDisplayDiv.appendChild(wiseNineteenLink);
+    displayTopDiv.appendChild(wiseNineteenDisplayDiv);
+  };
   const visionPro = () => {
     let vpDisplayDiv = document.createElement("div");
     let vpLink = document.createElement("a");
@@ -3930,7 +3971,6 @@ function showDisplays(camera) {
     fourKDisplayDiv.appendChild(fourKLink);
     displayTopDiv.appendChild(fourKDisplayDiv);
   };
-
   if (camera === "1688") {
     // Visionpro
     visionPro();
@@ -3941,6 +3981,12 @@ function showDisplays(camera) {
     // HDTV Wise
     hdtvWise();
     // Visionpro
+    visionPro();
+    selectDisplay(camera);
+  } else if (camera === "Flexible") {
+    VisionElectTwentyOne();
+    wiseNineteen();
+    hdtvWise();
     visionPro();
     selectDisplay(camera);
   } else {
@@ -3980,7 +4026,6 @@ function CameraDisplayObject(camera, display) {
 }
 // Object prototype
 CameraDisplayObject.prototype.displaySpecialties = function() {
-  console.log(NODATA);
   let hDiv = document.createElement("div");
   hDiv.setAttribute("class", "title-div");
   let hElement = document.createElement("h1");
@@ -4041,6 +4086,10 @@ CameraDisplayObject.prototype.displaySpecialties = function() {
     ELEVENSPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
+  } else if (this.camera === "Flexible") {
+    FLEXIBLESPECIALTIES.forEach(function(specialty) {
+      specialtyDiv(specialty);
+    });
   } else {
     SIXTEENSPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
@@ -4079,7 +4128,6 @@ function selectSpecialty(cameraDisplay) {
     });
   }
 }
-
 function displaySettings(cameraDisplaySpecialty) {
   let headerDiv = document.createElement("div");
   headerDiv.setAttribute("class", "settings-header");
@@ -4115,26 +4163,38 @@ function displaySettings(cameraDisplaySpecialty) {
   cameraSettingsDiv.setAttribute("class", "camera-settings");
 
   // CCU/Specialty Settings
+  // convert 5mm to FIVEMM function
+  console.log(cameraDisplaySpecialty.specialty);
+  if (cameraDisplaySpecialty.specialty === "5mm Flex Lap") {
+    cameraDisplaySpecialty.specialty = "Five Flex Lap";
+  } else if (cameraDisplaySpecialty.specialty === "10mm Flex Lap") {
+    cameraDisplaySpecialty.specialty = "Ten Flex Lap";
+  }
+
   ccuSettings =
     cameraDisplaySpecialty.specialty.replace(/\s/g, "").toUpperCase() +
     cameraDisplaySpecialty.display.replace(/\s/g, "").toUpperCase() +
     cameraDisplaySpecialty.camera.replace(/\s/g, "").toUpperCase();
-  ccuSettingsUpCase = ccuSettings.toUpperCase();
+  console.log(ccuSettings);
+  console.log(cameraDisplaySpecialty.camera);
   if (
     cameraDisplaySpecialty.camera !== "1688" &&
     cameraDisplaySpecialty.camera !== "1288" &&
-    cameraDisplaySpecialty.camera !== "1188"
+    cameraDisplaySpecialty.camera !== "1188" &&
+    cameraDisplaySpecialty.camera !== "Flexible"
   ) {
     // CCU Parameters
     CCUPARAMETERS.forEach(function(parameter) {
+      console.log("1588 & 1488");
       let cameraParameter = document.createElement("p");
       cameraParameter.appendChild(document.createTextNode(parameter));
       cameraParameterDiv.appendChild(cameraParameter);
       parentDiv.appendChild(cameraParameterDiv);
     });
-
+    // CCU Settings
     for (let setting in CAMERASETTINGS) {
-      if (ccuSettingsUpCase === setting) {
+      console.log("in 15/14 if-statement", ccuSettings);
+      if (ccuSettings === setting) {
         CAMERASETTINGS[setting].forEach(function(setting) {
           let cameraSettings = document.createElement("p");
           cameraSettings.appendChild(document.createTextNode(setting));
@@ -4151,9 +4211,9 @@ function displaySettings(cameraDisplaySpecialty) {
       cameraParameterDiv.appendChild(cameraParameter);
       parentDiv.appendChild(cameraParameterDiv);
     });
-
+    // 1288 CCU Settings
     for (let setting in CAMERASETTINGS) {
-      if (ccuSettingsUpCase === setting) {
+      if (ccuSettings === setting) {
         CAMERASETTINGS[setting].forEach(function(setting) {
           let cameraSettings = document.createElement("p");
           cameraSettings.appendChild(document.createTextNode(setting));
@@ -4170,9 +4230,28 @@ function displaySettings(cameraDisplaySpecialty) {
       cameraParameterDiv.appendChild(cameraParameter);
       parentDiv.appendChild(cameraParameterDiv);
     });
-
+    // 1188 CCU Settings
     for (let setting in CAMERASETTINGS) {
-      if (ccuSettingsUpCase === setting) {
+      if (ccuSettings === setting) {
+        CAMERASETTINGS[setting].forEach(function(setting) {
+          let cameraSettings = document.createElement("p");
+          cameraSettings.appendChild(document.createTextNode(setting));
+          cameraSettingsDiv.appendChild(cameraSettings);
+          parentDiv.appendChild(cameraSettingsDiv);
+        });
+      }
+    }
+  } else if (cameraDisplaySpecialty.camera === "Flexible") {
+    // Flexible Parameters
+    FLEXIBLEPARAMETERS.forEach(function(parameter) {
+      let cameraParameter = document.createElement("p");
+      cameraParameter.appendChild(document.createTextNode(parameter));
+      cameraParameterDiv.appendChild(cameraParameter);
+      parentDiv.appendChild(cameraParameterDiv);
+    });
+    // FCU Settings
+    for (let setting in CAMERASETTINGS) {
+      if (ccuSettings === setting) {
         CAMERASETTINGS[setting].forEach(function(setting) {
           let cameraSettings = document.createElement("p");
           cameraSettings.appendChild(document.createTextNode(setting));
@@ -4182,14 +4261,16 @@ function displaySettings(cameraDisplaySpecialty) {
       }
     }
   } else {
+    // 1688 Parameters
     SIXTEENPARAMETERS.forEach(function(parameter) {
       let cameraParameter = document.createElement("p");
       cameraParameter.appendChild(document.createTextNode(parameter));
       cameraParameterDiv.appendChild(cameraParameter);
       parentDiv.appendChild(cameraParameterDiv);
     });
+    // 1688 CCU Settings
     for (let setting in SIXTEENSETTINGS) {
-      if (ccuSettingsUpCase === setting) {
+      if (ccuSettings === setting) {
         SIXTEENSETTINGS[setting].forEach(function(setting) {
           let cameraSettings = document.createElement("p");
           cameraSettings.appendChild(document.createTextNode(setting));
@@ -4263,7 +4344,6 @@ function displaySettings(cameraDisplaySpecialty) {
     cameraDisplaySpecialty.display.replace(/\s/g, "").toUpperCase() +
     cameraDisplaySpecialty.specialty.replace(/\s/g, "").toUpperCase() +
     cameraDisplaySpecialty.camera.replace(/\s/g, "").toUpperCase();
-
   if (cameraDisplaySpecialty.display !== "FourK") {
     MONITORPARAMS.forEach(function(parameter) {
       let pTag = document.createElement("p");
