@@ -236,3 +236,9 @@ body {
     width: 90%;
   }
 }
+
+@media (max-width: 361px) {
+  .parent-div {
+    font-size: 0.85em;
+  }
+}

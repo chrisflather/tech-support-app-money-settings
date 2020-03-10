@@ -1,6 +1,21 @@
 document.addEventListener("DOMContentLoaded", function() {
   selectCamera();
 });
+
+const NODATA = [
+  "No Data",
+  "No Data",
+  "No Data",
+  "No Data",
+  "No Data",
+  "No Data",
+  "No Data",
+  "No Data",
+  "No Data",
+  "No Data",
+  "No Data",
+  "No Data"
+];
 const SPECIALTIES = [
   "Multi",
   "Arthro 1",
@@ -20,7 +35,7 @@ const SPECIALTIES = [
   "Olympus GI"
 ];
 const PRECISION4KSPECIALTIES = ["Arthro 1", "Hysteroscopy", "ENT"];
-const FOURTEENFOURKPROSPECIALTIES = ["Arthro", "Lap"];
+const FOURTEENFOURKSPECIALTIES = ["Arthro", "Lap"];
 const FOURTEENSPECIALTIES = [
   "Multi",
   "Arthro 1",
@@ -36,6 +51,35 @@ const FOURTEENSPECIALTIES = [
   "Standard",
   "Vein Harvest",
   "Olympus GI"
+];
+const FIFTEENWISEVPSPECIALTIES = [
+  "Multi",
+  "Arthro 1",
+  "Arthro 2",
+  "Lap 1",
+  "Lap 2",
+  "Cysto",
+  "Hysteroscopy",
+  "Flexiscope",
+  "ENT",
+  "Laser",
+  "Microscope",
+  "Standard",
+  "Vein Harvest"
+];
+const FIFTEENFOURKSPECIALTIES = [
+  "Multi",
+  "Arthro 1",
+  "Arthro 2",
+  "Lap 1",
+  "Lap 2",
+  "Cysto",
+  "Hysteroscopy",
+  "Flexiscope",
+  "ENT",
+  "Laser",
+  "Microscope",
+  "Standard"
 ];
 const TWELVEFOURKSPECIALTIES = ["Arthro"];
 const PRECISIONSPECIALTIES = [
@@ -72,7 +116,7 @@ TWELVESPECIALTIES = [
   "Lap 1",
   "Lap 2",
   "Cysto",
-  "Hysto",
+  "Hysteroscopy",
   "Flexiscope",
   "ENT 1",
   "ENT 2",
@@ -409,6 +453,7 @@ const SIXTEENSETTINGS = {
     "Default Settings"
   ],
   ARTHRO2FOURK1688: [
+    "TBD",
     "TBD",
     "TBD",
     "TBD",
@@ -3337,20 +3382,6 @@ const CAMERASETTINGS = {
     "No Data",
     "No Data",
     "No Data"
-  ],
-  OLYMPUSGIFOURK1588: [
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data",
-    "No Data"
   ]
 };
 
@@ -3949,7 +3980,7 @@ function CameraDisplayObject(camera, display) {
 }
 // Object prototype
 CameraDisplayObject.prototype.displaySpecialties = function() {
-  console.log(this.display);
+  console.log(NODATA);
   let hDiv = document.createElement("div");
   hDiv.setAttribute("class", "title-div");
   let hElement = document.createElement("h1");
@@ -3965,8 +3996,19 @@ CameraDisplayObject.prototype.displaySpecialties = function() {
     PRECISIONSPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
+  } else if (
+    this.camera === "1588" &&
+    (this.display === "VisionPro" || this.display === "HDTV Wise")
+  ) {
+    FIFTEENWISEVPSPECIALTIES.forEach(function(specialty) {
+      specialtyDiv(specialty);
+    });
+  } else if (this.camera === "1588" && this.display === "FourK") {
+    FIFTEENFOURKSPECIALTIES.forEach(function(specialty) {
+      specialtyDiv(specialty);
+    });
   } else if (this.camera === "1488" && this.display === "FourK") {
-    FOURTEENFOURKPROSPECIALTIES.forEach(function(specialty) {
+    FOURTEENFOURKSPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
   } else if (
@@ -4027,7 +4069,6 @@ function selectSpecialty(cameraDisplay) {
   let specialtyTopDiv = document.getElementById("specialtyTopDiv");
   for (let button of specialtyButton) {
     button.addEventListener("click", function() {
-      // let displayTopDiv = document.getElementById("displayTopDiv");
       specialtyTopDiv.classList.add("specialtySelectDiv");
       let cameraDisplaySpecialty = {
         camera: cameraDisplay.camera,
@@ -4164,8 +4205,6 @@ function displaySettings(cameraDisplaySpecialty) {
 
   // Display Settings Div
   let displayHeaderDiv = document.createElement("div");
-  // let displaySettingsDiv1 = document.createElement("div");
-  // let displaySettingsDiv2 = document.createElement("div");
   displayHeaderDiv.setAttribute("class", "container-display");
 
   // Apply params settings to DOM
