@@ -140,9 +140,17 @@ FLEXIBLESPECIALTIES = [
   "5mm Flex Lap",
   "10mm Flex Lap",
   "Digital Flex Cysto",
-  "Digital flex Uretero",
-  "Olympus CV-190 GI"
+  "Digital flex Uretero"
 ];
+FLEXIBLEVPSPECIALTIES = [
+  "5mm Flex Lap",
+  "10mm Flex Lap",
+  "Digital Flex Cysto",
+  "Digital flex Uretero",
+  "Olympus CV 190 GI"
+];
+FLEXIBLEWISE19SPECIALTIES = ["Digital Flex Cysto"];
+FLEXIBLEVE21SPECIALTIES = ["5mm Flex Lap"];
 
 let ccuSettings;
 // let ccuSettingsUpCase;
@@ -3184,8 +3192,23 @@ const CAMERASETTINGS = {
   FIVEFLEXLAPVISIONELECT21FLEXIBLE: ["-2", "1", "6", "0", "0"],
   FIVEFLEXLAPWISE19FLEXIBLE: ["-2", "1", "6", "0", "0"],
   FIVEFLEXLAPHDTVWISEFLEXIBLE: ["-2", "1", "6", "0", "0"],
+  FIVEFLEXLAPVISIONPROFLEXIBLE: ["-2", "1", "6", "0", "0"],
   TENFLEXLAPVISIONELECT21FLEXIBLE: ["-2", "1", "6", "0", "0"],
+  TENFLEXLAPVISIONPROFLEXIBLE: ["-2", "1", "6", "0", "0"],
+  TENFLEXLAPHDTVWISEFLEXIBLE: ["-2", "1", "6", "0", "0"],
   DIGITALFLEXCYSTOVISIONELECT21FLEXIBLE: ["6", "6", "6", "-22", "-22"],
+  DIGITALFLEXCYSTOVISIONPROFLEXIBLE: ["6", "6", "6", "-22", "-22"],
+  DIGITALFLEXCYSTOHDTVWISEFLEXIBLE: ["6", "6", "6", "-22", "-22"],
+  DIGITALFLEXCYSTOWISE19FLEXIBLE: ["6", "6", "6", "-22", "-22"],
+  DIGITALFLEXURETEROHDTVWISEFLEXIBLE: ["6", "6", "6", "-22", "-22"],
+  DIGITALFLEXURETEROVISIONPROFLEXIBLE: ["6", "6", "6", "-22", "-22"],
+  OLYMPUSCV190GIVISIONPROFLEXIBLE: [
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data",
+    "No Data"
+  ],
 
   MULTIFOURK1588: [
     "26",
@@ -3746,7 +3769,50 @@ const MONITORSETTINGS = {
   VISIONPROENT1188: ["-30", "-30", "10", "S2", "45", "5", "No Data"],
   VISIONPROLASER1188: ["-30", "10", "5", "S2", "45", "55", "No Data"],
   VISIONPROMICROSCOPE1188: ["-30", "10", "5", "S2", "45", "55", "No Data"],
-  VISIONPROSTANDARD1188: ["-7", "5", "-10", "S2", "45", "55", "No Data"]
+  VISIONPROSTANDARD1188: ["-7", "5", "-10", "S2", "45", "55", "No Data"],
+  VISIONPROFIVEFLEXLAPFLEXIBLE: ["-40", "-3", "20", "S0", "45", "65", "5"],
+  VISIONPROTENFLEXLAPFLEXIBLE: ["-8", "12", "-5", "1.8", "50", "50", "5"],
+  VISIONPRODIGITALFLEXCYSTOFLEXIBLE: ["-25", "-25", "2", "S2", "45", "55", "5"],
+  VISIONPRODIGITALFLEXURETEROFLEXIBLE: [
+    "-25",
+    "-25",
+    "2",
+    "S2",
+    "45",
+    "55",
+    "5"
+  ],
+  VISIONPROOLYMPUSCV190GIFLEXIBLE: ["30", "30", "30", "S0", "35", "30", "5"],
+  HDTVWISEFIVEFLEXLAPFLEXIBLE: ["-40", "-3", "20", "S0", "45", "65", "5"],
+  HDTVWISETENFLEXLAPFLEXIBLE: ["-8", "12", "-5", "1.8", "50", "50", "5"],
+  HDTVWISEDIGITALFLEXCYSTOFLEXIBLE: ["-25", "-25", "2", "S2", "45", "55", "5"],
+  HDTVWISEDIGITALFLEXURETEROFLEXIBLE: [
+    "-25",
+    "-25",
+    "2",
+    "S2",
+    "45",
+    "55",
+    "5"
+  ],
+  WISE19DIGITALFLEXCYSTOFLEXIBLE: [
+    "3",
+    "-11",
+    "-22",
+    "1.7",
+    "50",
+    "50",
+    "No Data"
+  ],
+  VISIONELECT21FIVEFLEXLAPFLEXIBLE: [
+    "-50",
+    "30",
+    "40",
+    "S0",
+    "50",
+    "50",
+    "No Data"
+  ]
 };
 
 const FOURKSETTINGS = {
@@ -4086,8 +4152,20 @@ CameraDisplayObject.prototype.displaySpecialties = function() {
     ELEVENSPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
-  } else if (this.camera === "Flexible") {
+  } else if (this.camera === "Flexible" && this.display === "HDTV Wise") {
     FLEXIBLESPECIALTIES.forEach(function(specialty) {
+      specialtyDiv(specialty);
+    });
+  } else if (this.camera === "Flexible" && this.display === "VisionPro") {
+    FLEXIBLEVPSPECIALTIES.forEach(function(specialty) {
+      specialtyDiv(specialty);
+    });
+  } else if (this.camera === "Flexible" && this.display === "Wise 19") {
+    FLEXIBLEWISE19SPECIALTIES.forEach(function(specialty) {
+      specialtyDiv(specialty);
+    });
+  } else if (this.camera === "Flexible" && this.display === "Vision Elect 21") {
+    FLEXIBLEVE21SPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
   } else {
@@ -4164,7 +4242,6 @@ function displaySettings(cameraDisplaySpecialty) {
 
   // CCU/Specialty Settings
   // convert 5mm to FIVEMM function
-  console.log(cameraDisplaySpecialty.specialty);
   if (cameraDisplaySpecialty.specialty === "5mm Flex Lap") {
     cameraDisplaySpecialty.specialty = "Five Flex Lap";
   } else if (cameraDisplaySpecialty.specialty === "10mm Flex Lap") {
@@ -4175,8 +4252,6 @@ function displaySettings(cameraDisplaySpecialty) {
     cameraDisplaySpecialty.specialty.replace(/\s/g, "").toUpperCase() +
     cameraDisplaySpecialty.display.replace(/\s/g, "").toUpperCase() +
     cameraDisplaySpecialty.camera.replace(/\s/g, "").toUpperCase();
-  console.log(ccuSettings);
-  console.log(cameraDisplaySpecialty.camera);
   if (
     cameraDisplaySpecialty.camera !== "1688" &&
     cameraDisplaySpecialty.camera !== "1288" &&
@@ -4185,7 +4260,6 @@ function displaySettings(cameraDisplaySpecialty) {
   ) {
     // CCU Parameters
     CCUPARAMETERS.forEach(function(parameter) {
-      console.log("1588 & 1488");
       let cameraParameter = document.createElement("p");
       cameraParameter.appendChild(document.createTextNode(parameter));
       cameraParameterDiv.appendChild(cameraParameter);
@@ -4193,7 +4267,6 @@ function displaySettings(cameraDisplaySpecialty) {
     });
     // CCU Settings
     for (let setting in CAMERASETTINGS) {
-      console.log("in 15/14 if-statement", ccuSettings);
       if (ccuSettings === setting) {
         CAMERASETTINGS[setting].forEach(function(setting) {
           let cameraSettings = document.createElement("p");
