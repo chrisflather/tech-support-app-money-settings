@@ -9,18 +9,28 @@ const selectSDC = () => {
     button.addEventListener("click", function() {
       // Grab top div
       sdcDiv = document.getElementById("sdc-div");
-      console.log(sdcDiv);
       // Reassign the class name
       sdcDiv.classList.add("printer-div");
       // Grab the dataset using 'this' keyword
       let sdc = this.dataset.sdc;
       // I want to pass this camera to the 'showPrinters'
-      showPrinters(sdc);
+      changeTitle(sdc);
     });
   }
 };
-
+const changeTitle = sdc => {
+  // change Select CCU to Select Printer
+  let titleElement = document.getElementById("title-element");
+  titleElement.innerHTML = "Select Printer";
+  selectPrinter(sdc);
+};
 // Show printers
-const showPrinters = sdc => {
-  console.log(sdc);
+const selectPrinter = sdc => {
+  // Grab top div
+  let printerDiv = document.getElementById("printerDiv");
+  // Create element
+  let hTag = document.createElement("h1");
+  hTag.innerHTML = "sup yo";
+  console.log(hTag);
+  printerDiv.appendChild(hTag);
 };
