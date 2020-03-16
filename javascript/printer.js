@@ -87,4 +87,9 @@ const printerSettingsDiv = (sdc, printer) => {
   // Set attributes
   settingsHeaderOne.setAttribute("class", "header-one-div");
   settingsHeaderTwo.setAttribute("class", "header-two-div");
+  // test insert
+  settingsMainDiv.appendChild(settingsHeaderOne);
+  settingsMainDiv.appendChild(settingsHeaderTwo);
+
+  // Insert text
 };

@@ -57,9 +57,23 @@ body {
 }
 
 .settings-main-div {
+  display: flex;
+  flex-direction: row;
   width: 10em;
   height: 10em;
   background-color: #ffb600;
+}
+
+.header-one-div {
+  width: 5em;
+  height: 2em;
+  background-color: pink;
+}
+
+.header-two-div {
+  width: 5em;
+  height: 2em;
+  background-color: lightskyblue;
 }
 
 .title-div {
