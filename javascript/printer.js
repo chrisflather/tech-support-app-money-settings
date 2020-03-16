@@ -21,29 +21,21 @@ const selectSDC = () => {
   }
 };
 const changeTitleToPrinter = sdc => {
-  console.log("The SDC is:", sdc);
   // change Select CCU to Select Printer
   let titleElement = document.getElementById("title-element");
   titleElement.innerHTML = "Select Printer";
   buttons(sdc);
 };
 
-const changeTitleToSettings = sdc => {
-  // change Select Printer to Settings
-  let titleElement = document.getElementById("title-element");
-  titleElement.innerHTML = "Settings";
-};
-
 const buttons = sdc => {
   printers.forEach(printer => {
-    let printerTopDiv = document.getElementById("printerDiv");
+    let printerTopDiv = document.getElementById("printer-div");
     let printerDiv = document.createElement("div");
     let printerLink = document.createElement("a");
     printerDiv.setAttribute("class", "display-button-div");
     printerDiv.setAttribute("align", "center");
     printerLink.setAttribute("class", "example_a");
-    printerLink.setAttribute("data-display", `${printer}`);
-    console.log(printerLink);
+    printerLink.setAttribute("data-console", `${printer}`);
     printerLink.setAttribute("href", "#");
     printerLink.setAttribute("rel", "nofollow noopener");
     printerLink.appendChild(document.createTextNode(`${printer}`));
@@ -63,10 +55,36 @@ const addListener = sdc => {
       // Reassign the class name
       sdcDiv.classList.add("printer-div");
       // Grab the dataset using 'this' keyword
-      let printer = this.dataset.sdc;
+      let printer = this.dataset.console;
       // I want to pass this camera to the 'showPrinters'
-      console.log("sup", sdc);
-      changeTitleToSettings(sdc);
+      changeTitleToSettings(sdc, printer);
     });
   }
+};
+
+const changeTitleToSettings = (sdc, printer) => {
+  console.log(sdc, printer);
+  // change Select Printer to Settings
+  let titleElement = document.getElementById("title-element");
+  titleElement.innerHTML = "Printer Settings";
+  printerSettingsDiv(sdc, printer);
+};
+
+const printerSettingsDiv = (sdc, printer) => {
+  // Grab printer div
+  let printerDiv = document.getElementById("printer-div");
+  // reassign class name
+  printerDiv.classList.add("printer-display-none-div");
+  // Grab Settings parent div
+  let settingsDiv = document.getElementById("settings-div");
+  // Create main div
+  let settingsMainDiv = document.createElement("div");
+  settingsMainDiv.setAttribute("class", "settings-main-div");
+  settingsDiv.appendChild(settingsMainDiv);
+  // Two Headers side-by-side
+  let settingsHeaderOne = document.createElement("div");
+  let settingsHeaderTwo = document.createElement("div");
+  // Set attributes
+  settingsHeaderOne.setAttribute("class", "header-one-div");
+  settingsHeaderTwo.setAttribute("class", "header-two-div");
 };
