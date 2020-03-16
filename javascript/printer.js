@@ -77,6 +77,7 @@ const printerSettingsDiv = (sdc, printer) => {
   let printerDiv = document.getElementById("printer-div");
   // reassign class name
   printerDiv.classList.add("printer-display-none-div");
+
   // Grab Settings parent div
   let settingsDiv = document.getElementById("settings-div");
   // Create main div
@@ -94,11 +95,25 @@ const printerSettingsDiv = (sdc, printer) => {
   let paramsTitleTextNode = document.createTextNode(`${sdcUpcase}`);
   paramsTitle.appendChild(paramsTitleTextNode);
   settingsHeaderOne.appendChild(paramsTitle);
+
   // Insert text-settings
   let settingsTitle = document.createElement("h3");
   let settingsTitleTextNode = document.createTextNode(`${printer}`);
   settingsTitle.appendChild(settingsTitleTextNode);
   settingsHeaderTwo.appendChild(settingsTitle);
+
+  // Settings body
+  let settingsBody = document.createElement("div");
+  settingsBody.setAttribute("class", "settings-body-div");
+  settingsDiv.appendChild(settingsBody);
+
+  // Body box1 and box2 side-by-side
+  let settingsBoxOne = document.createElement("div");
+  settingsBoxOne.setAttribute("class", "settings-box-one");
+  let settingsBoxTwo = document.createElement("div");
+  settingsBoxTwo.setAttribute("class", "settings-box-two");
+  settingsBody.appendChild(settingsBoxOne);
+  settingsBody.appendChild(settingsBoxTwo);
 
   // test insert
   settingsMainDiv.appendChild(settingsHeaderOne);
