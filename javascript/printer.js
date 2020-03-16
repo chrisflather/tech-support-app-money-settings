@@ -71,6 +71,8 @@ const changeTitleToSettings = (sdc, printer) => {
 };
 
 const printerSettingsDiv = (sdc, printer) => {
+  let sdcUpcase = sdc.toUpperCase();
+
   // Grab printer div
   let printerDiv = document.getElementById("printer-div");
   // reassign class name
@@ -87,9 +89,18 @@ const printerSettingsDiv = (sdc, printer) => {
   // Set attributes
   settingsHeaderOne.setAttribute("class", "header-one-div");
   settingsHeaderTwo.setAttribute("class", "header-two-div");
+  // Insert text-params
+  let paramsTitle = document.createElement("h3");
+  let paramsTitleTextNode = document.createTextNode(`${sdcUpcase}`);
+  paramsTitle.appendChild(paramsTitleTextNode);
+  settingsHeaderOne.appendChild(paramsTitle);
+  // Insert text-settings
+  let settingsTitle = document.createElement("h3");
+  let settingsTitleTextNode = document.createTextNode(`${printer}`);
+  settingsTitle.appendChild(settingsTitleTextNode);
+  settingsHeaderTwo.appendChild(settingsTitle);
+
   // test insert
   settingsMainDiv.appendChild(settingsHeaderOne);
   settingsMainDiv.appendChild(settingsHeaderTwo);
-
-  // Insert text
 };

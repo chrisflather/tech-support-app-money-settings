@@ -54,26 +54,33 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #262626;
 }
 
 .settings-main-div {
   display: flex;
   flex-direction: row;
-  width: 10em;
+  width: 90%;
   height: 10em;
+  border-radius: 5px;
+  padding: 0.25em;
   background-color: #ffb600;
 }
 
 .header-one-div {
-  width: 5em;
+  width: 50%;
   height: 2em;
-  background-color: pink;
+  padding: 1em;
+  color: #262626;
+  background-color: #ffb600;
 }
 
 .header-two-div {
-  width: 5em;
+  width: 50%;
   height: 2em;
-  background-color: lightskyblue;
+  padding: 1em;
+  color: #262626;
+  background-color: #ffb600;
 }
 
 .title-div {
