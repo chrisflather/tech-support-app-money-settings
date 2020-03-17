@@ -82,7 +82,6 @@ body {
   height: auto;
   color: #262626;
   background-color: #ffb600;
-  /* background-color: #ffb600; */
 }
 
 .settings-body-div {
@@ -111,9 +110,6 @@ body {
   color: #fff;
   border-bottom-right-radius: 5px;
   background-color: #ffb600;
-}
-
-.p-tag-div-two {
 }
 
 .p-box {
@@ -153,4 +149,25 @@ body {
   -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
   box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
   transition: all 0.4s ease 0s;
+}
+
+@media (max-width: 321px) {
+  #settings-div {
+    font-size: 0.85em;
+  }
+}
+@media (max-width: 361px) {
+  #settings-div {
+    font-size: 0.9em;
+  }
+}
+
+@media (min-width: 721px) {
+  #settings-div {
+    margin-left: 15%;
+    align-items: center;
+    justify-content: center;
+    color: #262626;
+    width: 70%;
+  }
 }

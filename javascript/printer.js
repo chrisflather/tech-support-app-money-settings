@@ -2,7 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
   selectSDC();
 });
 // Variables
-const printers = ["SDP1000", "Kodak 72750", "HP D5460"];
+const printers = ["SDP1000", "SDP1000 alt.", "Kodak 72750", "Kodak 72750 alt."];
+const hdPrinters = ["SDP1000", "Kodak 72750", "HP D5460"];
+const hubPrinters = ["SDP1000"];
 const SDCPARAMETERS = [
   "Brightness",
   "Contrast",
@@ -10,7 +12,11 @@ const SDCPARAMETERS = [
   "Chroma",
   "Sharpness"
 ];
+const hubSpecialties = ["Laparoscopic", "Orthroscopy", "Spy-Phi"];
 SDCSETTINGS = ["10", "6", "0", "-6", "13"];
+ORTHOHUB = ["-30", "180", "-10", "83", "660"];
+LAPHUB = ["-30", "260", "10", "83", "660"];
+SPYHUB = ["75", "-10", "10", "83", "660"];
 const selectSDC = () => {
   // Grab the SDC buttons
   let sdcButtons = document.getElementsByClassName("example_a");
@@ -29,26 +35,39 @@ const selectSDC = () => {
   }
 };
 const changeTitleToPrinter = sdc => {
-  // change Select CCU to Select Printer
   let titleElement = document.getElementById("title-element");
-  titleElement.innerHTML = "Select Printer";
+  if (sdc === "hub") {
+    titleElement.innerHTML = "Select Specialty";
+  } else {
+    titleElement.innerHTML = "Select Printer";
+  }
   buttons(sdc);
 };
 
 const buttons = sdc => {
-  printers.forEach(printer => {
-    let printerTopDiv = document.getElementById("printer-div");
-    let printerDiv = document.createElement("div");
-    let printerLink = document.createElement("a");
-    printerDiv.setAttribute("class", "display-button-div");
-    printerDiv.setAttribute("align", "center");
-    printerLink.setAttribute("class", "example_a");
-    printerLink.setAttribute("data-console", `${printer}`);
-    printerLink.setAttribute("href", "#");
-    printerLink.setAttribute("rel", "nofollow noopener");
-    printerLink.appendChild(document.createTextNode(`${printer}`));
-    printerDiv.appendChild(printerLink);
-    printerTopDiv.appendChild(printerDiv);
+  let buttonVariable;
+  console.log(sdc);
+  // Select printers to show
+  if (sdc === "hub") {
+    buttonVariable = hubSpecialties;
+  } else if (sdc !== "sdc-hd") {
+    buttonVariable = printers;
+  } else {
+    buttonVariable = hdPrinters;
+  }
+  buttonVariable.forEach(item => {
+    let buttonsTopDiv = document.getElementById("printer-div");
+    let buttonsDiv = document.createElement("div");
+    let buttonsLink = document.createElement("a");
+    buttonsDiv.setAttribute("class", "display-button-div");
+    buttonsDiv.setAttribute("align", "center");
+    buttonsLink.setAttribute("class", "example_a");
+    buttonsLink.setAttribute("data-value", `${item}`);
+    buttonsLink.setAttribute("href", "#");
+    buttonsLink.setAttribute("rel", "nofollow noopener");
+    buttonsLink.appendChild(document.createTextNode(`${item}`));
+    buttonsDiv.appendChild(buttonsLink);
+    buttonsTopDiv.appendChild(buttonsDiv);
   });
   addListener(sdc);
 };
@@ -63,22 +82,22 @@ const addListener = sdc => {
       // Reassign the class name
       sdcDiv.classList.add("printer-div");
       // Grab the dataset using 'this' keyword
-      let printer = this.dataset.console;
+      let value = this.dataset.value;
       // I want to pass this camera to the 'showPrinters'
-      changeTitleToSettings(sdc, printer);
+      changeTitleToSettings(sdc, value);
     });
   }
 };
 
-const changeTitleToSettings = (sdc, printer) => {
-  console.log(sdc, printer);
+const changeTitleToSettings = (sdc, value) => {
+  console.log(value);
   // change Select Printer to Settings
   let titleElement = document.getElementById("title-element");
-  titleElement.innerHTML = "Printer Settings";
-  printerSettingsDiv(sdc, printer);
+  titleElement.innerHTML = "SDC Printer Settings";
+  printerSettingsDiv(sdc, value);
 };
 
-const printerSettingsDiv = (sdc, printer) => {
+const printerSettingsDiv = (sdc, value) => {
   let sdcUpcase = sdc.toUpperCase();
 
   // Grab printer div
@@ -106,7 +125,7 @@ const printerSettingsDiv = (sdc, printer) => {
 
   // Insert text-settings
   let settingsTitle = document.createElement("h3");
-  let settingsTitleTextNode = document.createTextNode(`${printer}`);
+  let settingsTitleTextNode = document.createTextNode(`${value}`);
   settingsTitle.appendChild(settingsTitleTextNode);
   settingsHeaderTwo.appendChild(settingsTitle);
 
@@ -133,7 +152,19 @@ const printerSettingsDiv = (sdc, printer) => {
   });
 
   // insert settings in settingsBoxTwo
-  SDCSETTINGS.forEach(function(setting) {
+  let settings;
+  console.log(value);
+  if (value === "Orthroscopy") {
+    settings = ORTHOHUB;
+  } else if (value === "Laparoscopic") {
+    settings = LAPHUB;
+  } else if (value === "Spy-Phi") {
+    settings = SPYHUB;
+  } else {
+    settings = SDCSETTINGS;
+  }
+
+  settings.forEach(function(setting) {
     let pTagDivTwo = document.createElement("div");
     pTagDivTwo.setAttribute("class", "p-tag-div-two");
     let pTagBoxTwo = document.createElement("p");
