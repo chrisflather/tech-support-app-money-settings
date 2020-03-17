@@ -3,6 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 // Variables
 const printers = ["SDP1000", "Kodak 72750", "HP D5460"];
+const SDCPARAMETERS = [
+  "Brightness",
+  "Contrast",
+  "Phase",
+  "Chroma",
+  "Sharpness"
+];
+SDCSETTINGS = ["10", "6", "0", "-6", "13"];
 const selectSDC = () => {
   // Grab the SDC buttons
   let sdcButtons = document.getElementsByClassName("example_a");
@@ -114,6 +122,27 @@ const printerSettingsDiv = (sdc, printer) => {
   settingsBoxTwo.setAttribute("class", "settings-box-two");
   settingsBody.appendChild(settingsBoxOne);
   settingsBody.appendChild(settingsBoxTwo);
+
+  // insert parameters in settingsBoxOne
+  SDCPARAMETERS.forEach(function(parameter) {
+    let pTagBoxOne = document.createElement("p");
+    pTagBoxOne.setAttribute("class", "p-box");
+    let pTagTextNode = document.createTextNode(`${parameter}`);
+    pTagBoxOne.appendChild(pTagTextNode);
+    settingsBoxOne.appendChild(pTagBoxOne);
+  });
+
+  // insert settings in settingsBoxTwo
+  SDCSETTINGS.forEach(function(setting) {
+    let pTagDivTwo = document.createElement("div");
+    pTagDivTwo.setAttribute("class", "p-tag-div-two");
+    let pTagBoxTwo = document.createElement("p");
+    pTagBoxTwo.setAttribute("class", "p-box");
+    let pTagTextNode = document.createTextNode(`${setting}`);
+    pTagBoxTwo.appendChild(pTagTextNode);
+    pTagDivTwo.appendChild(pTagBoxTwo);
+    settingsBoxTwo.appendChild(pTagDivTwo);
+  });
 
   // test insert
   settingsMainDiv.appendChild(settingsHeaderOne);

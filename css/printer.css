@@ -64,47 +64,61 @@ body {
   width: 90%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  padding: 1em;
+  padding: 1em 0em 0.5em 0em;
   background-color: #ffb600;
 }
 
 .header-one-div {
   width: 50%;
-  height: 2em;
-  padding: 1em;
+  padding-left: 1em;
+  height: auto;
   color: #262626;
   background-color: #ffb600;
 }
 
 .header-two-div {
+  padding-left: 1em;
   width: 50%;
-  height: 2em;
-  padding: 1em;
+  height: auto;
   color: #262626;
   background-color: #ffb600;
+  /* background-color: #ffb600; */
 }
 
 .settings-body-div {
   display: flex;
   flex-direction: row;
   width: 90%;
-  height: 50vh;
+  height: auto;
 }
 
 .settings-box-one {
   width: 50%;
   height: 100%;
   padding: 1em;
-  color: #262626;
-  background-color: gray;
+  padding-bottom: 2em;
+  color: #fff;
+  background-color: #ffb600;
+  border-bottom-left-radius: 5px;
 }
 
 .settings-box-two {
   width: 50%;
   height: 100%;
   padding: 1em;
-  color: #262626;
-  background-color: fuchsia;
+  padding-bottom: 2em;
+  text-align: left;
+  color: #fff;
+  border-bottom-right-radius: 5px;
+  background-color: #ffb600;
+}
+
+.p-tag-div-two {
+}
+
+.p-box {
+  padding-top: 0.7em;
+  border-bottom: 1px solid #262626;
 }
 
 .title-div {
