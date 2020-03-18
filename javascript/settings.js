@@ -56,8 +56,10 @@ const FIFTEENWISEVPSPECIALTIES = [
   "Multi",
   "Arthro 1",
   "Arthro 2",
+  "Arthro 4_16",
   "Lap 1",
   "Lap 2",
+  "Lap STORZ",
   "Cysto",
   "Hysteroscopy",
   "Flexiscope",
@@ -67,6 +69,7 @@ const FIFTEENWISEVPSPECIALTIES = [
   "Standard",
   "Vein Harvest"
 ];
+
 const FIFTEENFOURKSPECIALTIES = [
   "Multi",
   "Arthro 1",
@@ -873,7 +876,7 @@ const CAMERASETTINGS = {
     "On",
     "Auto",
     "1",
-    "5",
+    "3",
     "1",
     "19"
   ],
@@ -1018,10 +1021,10 @@ const CAMERASETTINGS = {
     "26"
   ],
   STANDARDVISIONPRO1588: [
-    "35",
+    "32",
     "Normal",
     "-10",
-    "0",
+    "-3",
     "0",
     "0",
     "On",
@@ -1029,7 +1032,7 @@ const CAMERASETTINGS = {
     "1",
     "3",
     "1",
-    "26"
+    "23"
   ],
   VEINHARVESTVISIONPRO1588: [
     "No Data",
@@ -3450,15 +3453,15 @@ const MONITORSETTINGS = {
   VISIONPROMULTI1588: ["-20", "-20", "10", "S2", "45", "60", "No Data"],
   VISIONPROARTHRO11588: ["-10", "-10", "5", "S2", "45", "60", "No Data"],
   VISIONPROARTHRO21588: ["-35", "5", "5", "S2", "45", "50", "No Data"],
-  VISIONPROARTHRO4_161588: ["-35", "-10", "5", "S1.5", "47", "58", "No Data"],
+  VISIONPROARTHRO4_161588: ["-35", "5", "5", "S1.5", "47", "58", "No Data"],
   VISIONPROLAP11588: ["-25", "-5", "5", "1.9", "45", "45", "No Data"],
   VISIONPROLAP21588: ["-35", "5", "5", "1.5", "45", "45", "No Data"],
   VISIONPROLAPSTORZ1588: ["-35", "5", "5", "S2", "45", "60", "No Data"],
   VISIONPROCYSTO1588: ["-40", "10", "5", "S2", "45", "60", "No Data"],
   VISIONPROHYSTEROSCOPY1588: ["-25", "-25", "2", "S2", "45", "50", "No Data"],
   VISIONPROFLEXISCOPE1588: ["-50", "-30", "5", "S0", "47", "58", "No Data"],
-  VISIONPROENT1588: ["-30", "10", "5", "S2", "45", "60", "No Data"],
-  VISIONPROLASER1588: ["-30", "10", "5", "S3", "45", "60", "No Data"],
+  VISIONPROENT1588: ["-35", "10", "5", "S2", "45", "60", "No Data"],
+  VISIONPROLASER1588: ["-35", "10", "5", "S3", "45", "60", "No Data"],
   VISIONPROMICROSCOPE1588: ["-7", "5", "-10", "S0", "45", "55", "No Data"],
   VISIONPROSTANDARD1588: ["-50", "30", "10", "1.5", "47", "58", "No Data"],
   VISIONPROVEINHARVEST1588: ["70", "46", "28", "S0", "37", "41", "No Data"],
@@ -3496,7 +3499,7 @@ const MONITORSETTINGS = {
   HDTVWISEHYSTEROSCOPY1588: ["-25", "-25", "2", "S2", "45", "50", "No Data"],
   HDTVWISEFLEXISCOPE1588: ["-50", "-30", "5", "S0", "47", "58", "No Data"],
   HDTVWISEENT1588: ["-35", "-3", "25", "S1", "45", "55", "No Data"],
-  HDTVWISELASER1588: ["-35", "-3", "25", "S1", "55", "35", "No Data"],
+  HDTVWISELASER1588: ["-35", "-3", "25", "S1", "45", "55", "No Data"],
   HDTVWISEMICROSCOPE1588: ["-30", "-15", "10", "S2", "45", "58", "No Data"],
   HDTVWISESTANDARD1588: ["-50", "30", "10", "1.5", "47", "58", "No Data"],
   HDTVWISEVEINHARVEST1588: ["-36", "-38", "0", "S2", "50", "46", "No Data"],
@@ -4108,8 +4111,8 @@ CameraDisplayObject.prototype.displaySpecialties = function() {
       specialtyDiv(specialty);
     });
   } else if (
-    this.camera === "1588" &&
-    (this.display === "VisionPro" || this.display === "HDTV Wise")
+    (this.camera === "1588" && this.display === "VisionPro") ||
+    (this.camera === "1588" && this.display === "HDTV Wise")
   ) {
     FIFTEENWISEVPSPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
@@ -4127,10 +4130,6 @@ CameraDisplayObject.prototype.displaySpecialties = function() {
     (this.display === "VisionPro" || this.display === "HDTV Wise")
   ) {
     FOURTEENSPECIALTIES.forEach(function(specialty) {
-      specialtyDiv(specialty);
-    });
-  } else if (this.camera === "1588") {
-    SPECIALTIES.forEach(function(specialty) {
       specialtyDiv(specialty);
     });
   } else if (this.camera === "1688" && this.display === "VisionPro") {
