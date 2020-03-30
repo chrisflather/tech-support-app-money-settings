@@ -107,7 +107,7 @@ const SIXTEENSPECIALTIES = [
   "Hysto",
   "Microscope",
   "Olympus GI",
-  "Vien Harvest"
+  "Vein Harvest"
 ];
 const SIXTEENVISIONPROSPECIALTIES = ["Lap 1", "Lap 2", "Lap Storz"];
 TWELVESPECIALTIES = [
@@ -624,7 +624,7 @@ const SIXTEENSETTINGS = {
     "Default Settings",
     "Default Settings"
   ],
-  VIENHARVESTFOURK1688: [
+  VEINHARVESTFOURK1688: [
     "Default Settings",
     "Default Settings",
     "Default Settings",
@@ -3938,7 +3938,7 @@ const FOURKSETTINGS = {
   FOURKHYSTO1688: ["-45", "-15", "0", "S5", "Low", "40", "50", "No Data"],
   FOURKMICROSCOPE1688: ["TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD"],
   FOURKOLYMPUSGI1688: ["TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD"],
-  FOURKVIENHARVEST1688: ["TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD"]
+  FOURKVEINHARVEST1688: ["TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD"]
 };
 
 const backButton = () => {
