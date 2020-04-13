@@ -92,10 +92,9 @@ const addListener = (sdc) => {
 };
 
 const changeTitleToSettings = (sdc, value) => {
-  console.log(value);
   // change Select Printer to Settings
   let titleElement = document.getElementById("title-element");
-  titleElement.innerHTML = "SDC Printer Settings";
+  titleElement.innerHTML = "Printer Settings";
   printerSettingsDiv(sdc, value);
 };
 
