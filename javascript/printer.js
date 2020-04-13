@@ -2,18 +2,20 @@ document.addEventListener("DOMContentLoaded", () => {
   selectSDC();
 });
 // Variables
-const printers = ["SDP1000", "SDP1000 alt.", "Kodak 72750", "Kodak 72750 alt."];
-const hdPrinters = ["SDP1000", "Kodak 72750", "HP D5460"];
+const printers = ["SDP1000", "SDP1000 alt."];
 const hubPrinters = ["SDP1000"];
 const SDCPARAMETERS = [
   "Brightness",
   "Contrast",
   "Phase",
   "Chroma",
-  "Sharpness"
+  "Sharpness",
 ];
 const hubSpecialties = ["Laparoscopic", "Orthroscopy", "Spy-Phi"];
-SDCSETTINGS = ["10", "6", "0", "-6", "13"];
+SDC = ["130", "78", "0", "-180", "650"];
+SDC3ALT = ["52", "104", "5", "-420", "800"];
+SDCULTRAALT = ["0", "130", "0", "-150", "750"];
+
 ORTHOHUB = ["-30", "180", "-10", "83", "660"];
 LAPHUB = ["-30", "260", "10", "83", "660"];
 SPYHUB = ["75", "-10", "10", "83", "660"];
@@ -22,7 +24,7 @@ const selectSDC = () => {
   let sdcButtons = document.getElementsByClassName("example_a");
   // loop over buttons and add event listener
   for (button of sdcButtons) {
-    button.addEventListener("click", function() {
+    button.addEventListener("click", function () {
       // Grab top div
       sdcDiv = document.getElementById("top-sdc-div");
       // Reassign the class name
@@ -34,7 +36,7 @@ const selectSDC = () => {
     });
   }
 };
-const changeTitleToPrinter = sdc => {
+const changeTitleToPrinter = (sdc) => {
   let titleElement = document.getElementById("title-element");
   if (sdc === "hub") {
     titleElement.innerHTML = "Select Specialty";
@@ -44,7 +46,7 @@ const changeTitleToPrinter = sdc => {
   buttons(sdc);
 };
 
-const buttons = sdc => {
+const buttons = (sdc) => {
   let buttonVariable;
   console.log(sdc);
   // Select printers to show
@@ -55,7 +57,7 @@ const buttons = sdc => {
   } else {
     buttonVariable = hdPrinters;
   }
-  buttonVariable.forEach(item => {
+  buttonVariable.forEach((item) => {
     let buttonsTopDiv = document.getElementById("printer-div");
     let buttonsDiv = document.createElement("div");
     let buttonsLink = document.createElement("a");
@@ -72,11 +74,11 @@ const buttons = sdc => {
   addListener(sdc);
 };
 
-const addListener = sdc => {
+const addListener = (sdc) => {
   let consoleButtons = document.getElementsByClassName("example_a");
   // loop over buttons and add event listener
   for (button of consoleButtons) {
-    button.addEventListener("click", function() {
+    button.addEventListener("click", function () {
       // Grab top div
       sdcDiv = document.getElementById("top-sdc-div");
       // Reassign the class name
@@ -143,7 +145,7 @@ const printerSettingsDiv = (sdc, value) => {
   settingsBody.appendChild(settingsBoxTwo);
 
   // insert parameters in settingsBoxOne
-  SDCPARAMETERS.forEach(function(parameter) {
+  SDCPARAMETERS.forEach(function (parameter) {
     let pTagBoxOne = document.createElement("p");
     pTagBoxOne.setAttribute("class", "p-box");
     let pTagTextNode = document.createTextNode(`${parameter}`);
@@ -153,18 +155,22 @@ const printerSettingsDiv = (sdc, value) => {
 
   // insert settings in settingsBoxTwo
   let settings;
-  console.log(value);
+  console.log(value, sdc);
   if (value === "Orthroscopy") {
     settings = ORTHOHUB;
   } else if (value === "Laparoscopic") {
     settings = LAPHUB;
   } else if (value === "Spy-Phi") {
     settings = SPYHUB;
+  } else if (value === "SDP1000 alt." && sdc === "sdc-ultra") {
+    settings = SDCULTRAALT;
+  } else if (value === "SDP1000 alt.") {
+    settings = SDC3ALT;
   } else {
-    settings = SDCSETTINGS;
+    settings = SDC;
   }
 
-  settings.forEach(function(setting) {
+  settings.forEach(function (setting) {
     let pTagDivTwo = document.createElement("div");
     pTagDivTwo.setAttribute("class", "p-tag-div-two");
     let pTagBoxTwo = document.createElement("p");
