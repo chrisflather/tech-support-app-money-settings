@@ -4406,7 +4406,7 @@ function displaySettings(cameraDisplaySpecialty) {
 
   // Out Of Box Message Function 
   console.log(cameraDisplaySpecialty.specialty)
-  if (cameraDisplaySpecialty.specialty === "Flexiscope" || cameraDisplaySpecialty.specialty === "Cysto" || cameraDisplaySpecialty.specialty === "Hystero") {
+  if (cameraDisplaySpecialty.specialty === "Flexiscope" || cameraDisplaySpecialty.specialty === "Cysto" || cameraDisplaySpecialty.specialty === "Hystero" || cameraDisplaySpecialty.specialty === "Microscope" || cameraDisplaySpecialty.specialty === "Olympus GI") {
     let outOfBoxMessage = document.createElement("div")
     let outOfBoxMessageText = document.createElement("p")
     outOfBoxMessage.setAttribute("class", "out-of-box-message")
