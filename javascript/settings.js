@@ -107,7 +107,7 @@ const SIXTEENSPECIALTIES = [
   "Flexiscope",
   "Cysto",
   "Laser",
-  "Hysto",
+  "Hystero",
   "Microscope",
   "Olympus GI",
   "Vein Harvest"
@@ -231,7 +231,30 @@ const SIXTEENPARAMETERS = [
   "ENV Level",
   "ENV BG Offset",
   "ENV Gamma",
-  "ENV Max Gain"
+  "ENV Max Gain", 
+  // New parameters
+  "Size", 
+  "G Hue", 
+  "G Gain", 
+  "R-Ye Hue", 
+  "R-Ye Gain", 
+  "Ye Hue", 
+  "Ye Gain", 
+  "Ye-G Hue",
+  "Ye-G Gain",
+  "G-Cy Hue", 
+  "G-Cy Gain", 
+  "CY Hue",
+  "CY Gain", 
+  "CY-B Hue", 
+  "CY-B Gain", 
+  "B-Mg Hue", 
+  "B-Mg Gain", 
+  "Mg Hue", 
+  "Mg Gain", 
+  "Mg-R Hue", 
+  "Mg-R Gain"
+
 ];
 const FLEXIBLEPARAMETERS = ["R-Gain", "R-Hue", "B-Peak", "B-Gain", "B-Hue"];
 
@@ -393,57 +416,54 @@ const SIXTEENSETTINGS = {
     "0",
     "0"
   ],
-  FLEXSCOPEFOURK1688: [
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings"
-  ],
+  
   CYSTOFOURK1688: [
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings"
+    "Auto",
+    "30",
+    "1",
+    "9",
+    "Photometry",
+    "2",
+    "3",
+    "4",
+    "0",
+    "4",
+    "6",
+    "10",
+    "30",
+    "0",
+    "4",
+    "0",
+    "-12",
+    "0",
+    "Auto",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "3",
+    "0",
+    "0",
+    "9",
+    "-5",
+    "4",
+    "5",
+    "0",
+    "0",
+    "0",
+    "0",
+    "5",
+    "-17",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+    
   ],
   ARTHRO1FOURK1688: [
     "Default Settings",
@@ -498,30 +518,51 @@ const SIXTEENSETTINGS = {
     "TBD"
   ],
   FLEXISCOPEFOURK1688: [
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings"
+    "Auto",
+    "30",
+    "1",
+    "9",
+    "Photometry",
+    "2",
+    "3",
+    "4",
+    "0",
+    "4",
+    "6",
+    "10",
+    "30",
+    "0",
+    "4",
+    "0",
+    "-12",
+    "0",
+    "Auto",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "3",
+    "0",
+    "0",
+    "9",
+    "-5",
+    "4",
+    "5",
+    "0",
+    "0",
+    "0",
+    "0",
+    "5",
+    "-17",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
   ],
   LASERFOURK1688: [
     "Default Settings",
@@ -549,31 +590,52 @@ const SIXTEENSETTINGS = {
     "Default Settings",
     "Default Settings"
   ],
-  HYSTOFOURK1688: [
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings",
-    "Default Settings"
+  HYSTEROFOURK1688: [
+    "Auto",
+    "30",
+    "1",
+    "9",
+    "Photometry",
+    "2",
+    "3",
+    "4",
+    "0",
+    "4",
+    "6",
+    "10",
+    "30",
+    "0",
+    "4",
+    "0",
+    "-12",
+    "0",
+    "Auto",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "3",
+    "0",
+    "0",
+    "9",
+    "-5",
+    "4",
+    "5",
+    "0",
+    "0",
+    "0",
+    "0",
+    "5",
+    "-17",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
   ],
   MICROSCOPEFOURK1688: [
     "Default Settings",
@@ -3938,7 +4000,7 @@ const FOURKSETTINGS = {
   FOURKARTHRO11688: ["-10", "10", "5", "S4", "Low", "37", "54", "No Data"],
   FOURKARTHRO21688: ["-15", "-5", "8", "S7", "Low", "37", "52", "No Data"],
   FOURKLASER1688: ["-35", "0", "10", "S0", "Mid", "45", "70", "No Data"],
-  FOURKHYSTO1688: ["-45", "-15", "0", "S5", "Low", "40", "50", "No Data"],
+  FOURKHYSTERO1688: ["-45", "-15", "0", "S5", "Low", "40", "50", "No Data"],
   FOURKMICROSCOPE1688: ["TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD"],
   FOURKOLYMPUSGI1688: ["TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD"],
   FOURKVEINHARVEST1688: ["TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD", "TBD"]
@@ -4205,6 +4267,7 @@ function selectSpecialty(cameraDisplay) {
     });
   }
 }
+
 function displaySettings(cameraDisplaySpecialty) {
   let headerDiv = document.createElement("div");
   headerDiv.setAttribute("class", "settings-header");
@@ -4217,7 +4280,6 @@ function displaySettings(cameraDisplaySpecialty) {
   );
   cameraParametersHeaderDiv.appendChild(cameraParameterTitle);
   headerDiv.appendChild(cameraParametersHeaderDiv);
-
   // params/settings parent Div
   let parentDiv = document.createElement("div");
   parentDiv.setAttribute("class", "parent-div");
@@ -4238,6 +4300,7 @@ function displaySettings(cameraDisplaySpecialty) {
   headerDiv.appendChild(cameraSettingsHeaderDiv);
   let cameraSettingsDiv = document.createElement("div");
   cameraSettingsDiv.setAttribute("class", "camera-settings");
+  
 
   // CCU/Specialty Settings
   // convert 5mm to FIVEMM function
@@ -4340,6 +4403,22 @@ function displaySettings(cameraDisplaySpecialty) {
       cameraParameterDiv.appendChild(cameraParameter);
       parentDiv.appendChild(cameraParameterDiv);
     });
+
+  // Out Of Box Message Function 
+  console.log(cameraDisplaySpecialty.specialty)
+  if (cameraDisplaySpecialty.specialty === "Flexiscope" || cameraDisplaySpecialty.specialty === "Cysto" || cameraDisplaySpecialty.specialty === "Hystero") {
+    let outOfBoxMessage = document.createElement("div")
+    let outOfBoxMessageText = document.createElement("p")
+    outOfBoxMessage.setAttribute("class", "out-of-box-message")
+    outOfBoxMessageText.setAttribute("class", "out-of-box-message-text")
+    outOfBoxMessageText.appendChild(document.createTextNode("These CCU settings come out of box with 1688 CCU software 4.0.13"))
+    outOfBoxMessage.appendChild(outOfBoxMessageText)
+     ccuSettingsTopDiv.appendChild(outOfBoxMessage)
+    }
+
+
+
+
     // 1688 CCU Settings
     for (let setting in SIXTEENSETTINGS) {
       if (ccuSettings === setting) {
@@ -4352,6 +4431,7 @@ function displaySettings(cameraDisplaySpecialty) {
       }
     }
   }
+  
   // Applying Headers to DOM
   ccuSettingsTopDiv.appendChild(headerDiv); // Parameter Header
   ccuSettingsTopDiv.appendChild(headerDiv); // Settings Header
